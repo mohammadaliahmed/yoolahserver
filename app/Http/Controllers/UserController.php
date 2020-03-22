@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -146,6 +147,22 @@ class UserController extends Controller
             ], Response::HTTP_OK);
 
         }
+    }
+    public function sendMail(Request $request)
+    {
+
+        $email=$request->email;
+
+        $data = [
+            'data' => "http://chatapp.com/sdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfsdfsdfs",
+
+        ];
+        $email="m.aliahmed0@gmail.com";
+        Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
+            $message->to($email)->subject("New User Registration");
+            $message->from('chat@gmail.com', 'Chat App');
+        });
+
     }
 
 }

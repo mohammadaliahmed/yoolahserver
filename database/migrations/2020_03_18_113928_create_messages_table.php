@@ -27,7 +27,7 @@ class CreateMessagesTable extends Migration
             $table->integer('messageById');
             $table->integer('roomId');
             $table->bigInteger('time');
-            $table->bigInteger('mediaTime');
+            $table->bigInteger('mediaTime')->nullable();
             $table->timestamps();
         });
     }

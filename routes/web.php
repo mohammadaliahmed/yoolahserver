@@ -30,5 +30,6 @@ Route::get('/create', 'RoomsController@create')->name('create');
 Route::get('/viewroom/{id}', 'RoomsController@viewroom')->name('viewroom');
 Route::get('/viewqr/{id}', 'AppRoomController@viewqr')->name('viewqr');
 Route::post('/createroom', 'RoomsController@createroom')->name('createroom');
+Route::post('/sendmail', 'RoomsController@sendmail')->name('sendmail');
 
 

@@ -35,7 +35,7 @@
 
 
                     <div class="card-body">
-                        <form method="GET" >
+                        <form method="POST" action="{{ route('sendmail') }}" >
                             @csrf
                             <div class="form-group row">
                                 <label for="name"

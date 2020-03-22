@@ -33,6 +33,7 @@ class AppRoomController extends Controller
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
             ], Response::HTTP_OK);
         } else {
+
             $roomUser = new RoomUsers();
             $roomUser->room_id = $request->room_id;
             $roomUser->user_id = $request->user_id;

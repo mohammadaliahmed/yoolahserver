@@ -27,6 +27,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('searchUsers', 'UserController@searchUsers');
     Route::post('userProfile', 'UserController@userProfile');
     Route::post('updateProfile', 'UserController@updateProfile');
+    Route::get('sendMail', 'UserController@sendMail');
 });
 
 

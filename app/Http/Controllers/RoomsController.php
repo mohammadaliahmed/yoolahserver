@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class RoomsController extends Controller
@@ -48,6 +49,9 @@ class RoomsController extends Controller
         QrCode::size(1500)
             ->format('svg')
             ->generate('http://yoolah.com/r/' . $room->id, public_path('qr/' . $room->id . 'qrcode.svg'));
+        QrCode::size(1500)
+            ->format('png')
+            ->generate('http://yoolah.com/r/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
 
         $roomm = Rooms::find($room->id);
         $roomm->qr_code = $room->id . 'qrcode.svg';
@@ -70,7 +74,28 @@ class RoomsController extends Controller
 
     }
 
+    public function sendmail(Request $request)
+    {
+        $this->mailTo($request['email'], 8);
+        return redirect()->back()->with('message', 'Mail Sent');
 
 
+    }
+
+    public function mailTo($email, $id)
+    {
+
+
+        $data = [
+            'data' => "http://yoolah.com/r/" . $id,
+
+        ];
+        $email = "m.aliahmed0@gmail.com";
+        Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
+            $message->to($email)->subject("Invitation to Yoolah group");
+            $message->from('chat@gmail.com', 'Chat App');
+        });
+
+    }
 
 }
