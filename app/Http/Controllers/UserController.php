@@ -148,18 +148,17 @@ class UserController extends Controller
 
         }
     }
-    public function sendMail(Request $request)
+    public function sendMail()
     {
 
-        $email=$request->email;
 
         $data = [
             'data' => "http://chatapp.com/sdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfsdfsdfs",
 
         ];
-        $email="m.aliahmed0@gmail.com";
+        $email="m.aliahmed000@gmail.com";
         Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
-            $message->to($email)->subject("New User Registration");
+            $message->to($email)->subject("New yoolah User  Registration");
             $message->from('chat@gmail.com', 'Chat App');
         });
 

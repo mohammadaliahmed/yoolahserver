@@ -82,12 +82,12 @@ class RoomsController extends Controller
 
     }
 
-    public function mailTo($email, $id)
+    public function mailTo()
     {
 
 
         $data = [
-            'data' => "http://yoolah.com/r/" . $id,
+            'data' => "http://yoolah.com/r/",
 
         ];
         $email = "m.aliahmed0@gmail.com";
