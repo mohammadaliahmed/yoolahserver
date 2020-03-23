@@ -33,17 +33,23 @@ class AppRoomController extends Controller
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
             ], Response::HTTP_OK);
         } else {
+            $roomUser = DB::table('room_users')->where('room_id', $request->room_id)
+                ->where('user_id', $request->user_id)->first();
+            if ($roomUser != null) {
 
-            $roomUser = new RoomUsers();
-            $roomUser->room_id = $request->room_id;
-            $roomUser->user_id = $request->user_id;
-            $roomUser->can_message = 1;
-            $roomUser->save();
+            } else {
+                $roomUser = new RoomUsers();
+                $roomUser->room_id = $request->room_id;
+                $roomUser->user_id = $request->user_id;
+                $roomUser->can_message = 1;
+                $roomUser->save();
+            }
             return response()->json([
                 'code' => Response::HTTP_OK, 'message' => "false"
             ], Response::HTTP_OK);
 
         }
+
     }
 
     public function getRoomInfo(Request $request)
@@ -76,6 +82,7 @@ class AppRoomController extends Controller
             ], Response::HTTP_OK);
         }
     }
+
     public function viewqr(Request $request, $id)
     {
         $room = Rooms::find($id);
