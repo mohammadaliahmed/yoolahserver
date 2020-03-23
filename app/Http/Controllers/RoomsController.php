@@ -76,7 +76,12 @@ class RoomsController extends Controller
 
     public function sendmail(Request $request)
     {
-        $this->mailTo($request['email'], 8);
+//        $this->mailTo($request['email'], 8);
+        $msg = "http://yoolah.com/r/" . '8';
+        $abc="http://yoolah.acnure.com/viewqr/8";
+        $msg=$msg."<br>".$abc;
+        mail($request['email'], "Invitation to Yoolah group", $msg);
+
         return redirect()->back()->with('message', 'Mail Sent');
 
 
