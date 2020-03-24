@@ -26,7 +26,7 @@ class MailController extends Controller
 //        $mail->SMTPDebug = 1;
 //        $mail->SMTPAuth = TRUE;
 //        $mail->SMTPSecure = "tls";
-//        $mail->Port = 587;
+//        $mail->Port = 587;e
 //        $mail->Host = "sg2plcpnl0118.prod.sin2.secureserver.net";
 //        $mail->Username = "support@acnure.com";
 //        $mail->Password = "Alijangreat99.";

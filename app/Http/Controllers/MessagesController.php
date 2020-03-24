@@ -27,7 +27,7 @@ class MessagesController extends Controller
             $message->messageByName = $request->messageByName;
             $message->imageUrl = $request->imageUrl;
             $message->audioUrl = $request->audioUrl;
-            $message->mediaTime = $request->mediaTime;
+//            $message->mediaTime = $request->mediaTime;
             $message->filename = $request->filename;
             $message->messageByPicUrl = $request->messageByPicUrl;
             $message->videoUrl = $request->videoUrl;

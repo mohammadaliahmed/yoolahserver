@@ -65,7 +65,7 @@ class UserController extends Controller
                         'code' => 302, 'message' => 'Empty params',
                     ], Response::HTTP_OK);
                 } else {
-                    $abc=Hash::make($request->password);
+                    $abc = Hash::make($request->password);
                     $user = new User();
                     $user->name = $request->name;
                     $user->email = $request->email;
@@ -122,6 +122,7 @@ class UserController extends Controller
             $user->phone = $request->phone;
             $user->gender = $request->gender;
             $user->update();
+            DB::update('update messages set messageByPicUrl = ' . $request->thumbnailUrl . 'where messageById=' . $request->id);
             return response()->json([
                 'code' => Response::HTTP_OK, 'message' => "false", 'user' => $user
             ], Response::HTTP_OK);
@@ -148,6 +149,7 @@ class UserController extends Controller
 
         }
     }
+
     public function sendMail()
     {
 
@@ -156,7 +158,7 @@ class UserController extends Controller
             'data' => "http://chatapp.com/sdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfsdfsdfs",
 
         ];
-        $email="m.aliahmed000@gmail.com";
+        $email = "m.aliahmed000@gmail.com";
         Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
             $message->to($email)->subject("New yoolah User  Registration");
             $message->from('chat@gmail.com', 'Chat App');

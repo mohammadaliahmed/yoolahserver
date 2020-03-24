@@ -45,16 +45,11 @@ class RoomsController extends Controller
 
         ]);
 
-
-        QrCode::size(1500)
-            ->format('svg')
-            ->generate('http://yoolah.com/r/' . $room->id, public_path('qr/' . $room->id . 'qrcode.svg'));
-        QrCode::size(1500)
-            ->format('png')
+        QrCode::format('png')->size(300)
             ->generate('http://yoolah.com/r/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
 
         $roomm = Rooms::find($room->id);
-        $roomm->qr_code = $room->id . 'qrcode.svg';
+        $roomm->qr_code = $room->id . 'qrcode.png';
         $roomm->update();
 
 //        return redirect()->back()->with('message', 'Room Created');
