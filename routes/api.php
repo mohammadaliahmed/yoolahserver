@@ -37,6 +37,7 @@ Route::group(['prefix' => 'room'], function () {
     Route::post('updateCoverUrl', 'AppRoomController@updateCoverUrl');
     Route::post('getRoomInfo', 'AppRoomController@getRoomInfo');
     Route::post('addUserToRoom', 'AppRoomController@addUserToRoom');
+    Route::post('getRoomDetailsFromID', 'AppRoomController@getRoomDetailsFromID');
 });
 Route::group(['prefix' => 'message'], function () {
 

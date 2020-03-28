@@ -17,7 +17,9 @@
                                 <div class="col-sm">
 
                                     <img width="250px" src="../public/qr/{{$room->qr_code}}">
+                                    <h2>Group Id: {{$room->roomcode}}</h2>
                                 </div>
+                               
                                 <div class="col-sm">
 
                                 </div>
@@ -35,7 +37,7 @@
 
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('sendmail') }}" >
+                        <form method="POST" action="{{ route('sendmail') }}">
                             @csrf
                             <div class="form-group row">
                                 <label for="name"

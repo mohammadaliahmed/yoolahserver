@@ -8,6 +8,7 @@ use App\RoomUsers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use function sizeof;
 
 class AppRoomController extends Controller
 {
@@ -26,7 +27,30 @@ class AppRoomController extends Controller
         }
     }
 
-    public function addUserToRoom(Request $request)
+    public function getRoomDetailsFromID(Request $request)
+    {
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+            $room = DB::table('rooms')->where('roomcode', $request->code)->first();
+            if ($room==null) {
+                return response()->json([
+                    'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
+                ], Response::HTTP_NOT_FOUND);
+            } else {
+
+
+                return response()->json([
+                    'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
+                ], Response::HTTP_OK);
+            }
+        }
+    }
+
+    public
+    function addUserToRoom(Request $request)
     {
         if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
             return response()->json([
@@ -52,7 +76,8 @@ class AppRoomController extends Controller
 
     }
 
-    public function getRoomInfo(Request $request)
+    public
+    function getRoomInfo(Request $request)
     {
         if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
             return response()->json([
@@ -67,7 +92,8 @@ class AppRoomController extends Controller
         }
     }
 
-    public function updateCoverUrl(Request $request)
+    public
+    function updateCoverUrl(Request $request)
     {
         if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
             return response()->json([
@@ -83,7 +109,8 @@ class AppRoomController extends Controller
         }
     }
 
-    public function viewqr(Request $request, $id)
+    public
+    function viewqr(Request $request, $id)
     {
         $room = Rooms::find($id);
 
