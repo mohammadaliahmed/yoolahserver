@@ -21,6 +21,10 @@ class RoomsController extends Controller
         $userId = Auth::id();
 
         $rooms = DB::table('rooms')->where('userid', $userId)->get();
+        foreach ($rooms as $room) {
+            $members = DB::select("Select * from users where id IN(Select user_id from room_users where room_id=" . $room->id . ")");
+            $room->memeberSize = sizeof($members);
+        }
         return view('createroom')->with('rooms', $rooms);
 
 
@@ -37,11 +41,14 @@ class RoomsController extends Controller
 
         $userId = Auth::id();
 
+        $roomCode = rand(1234567, 9876544);
 
         $room = Rooms::create([
             'title' => $request['title'],
             'subtitle' => $request['subtitle'],
+            'members' => $request['members'],
             'userid' => $userId,
+            'roomcode' => $roomCode,
 
         ]);
 
@@ -64,6 +71,7 @@ class RoomsController extends Controller
         $room = Rooms::find($id);
         $members = DB::select("Select * from users where id IN(Select user_id from room_users where room_id=" . $room->id . ")");
 
+
         return view('viewroom')->with('room', $room)->with('members', $members);
 
 
@@ -73,8 +81,8 @@ class RoomsController extends Controller
     {
 //        $this->mailTo($request['email'], 8);
         $msg = "http://yoolah.com/r/" . '8';
-        $abc="http://yoolah.acnure.com/viewqr/8";
-        $msg=$msg."<br>".$abc;
+        $abc = "http://yoolah.acnure.com/viewqr/8";
+        $msg = $msg . "<br>" . $abc;
         mail($request['email'], "Invitation to Yoolah group", $msg);
 
         return redirect()->back()->with('message', 'Mail Sent');

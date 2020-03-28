@@ -41,8 +41,19 @@ Route::group(['prefix' => 'room'], function () {
 Route::group(['prefix' => 'message'], function () {
 
     Route::post('createMessage', 'MessagesController@createMessage');
+    Route::post('deleteMessageFroAll', 'MessagesController@deleteMessageFroAll');
     Route::post('allRoomMessages', 'MessagesController@allRoomMessages');
     Route::post('userMessages', 'MessagesController@userMessages');
+});
+Route::group(['prefix' => 'poll'], function () {
+
+    Route::post('createPoll', 'PollsController@createPoll');
+    Route::post('submitAnswer', 'PollsController@submitAnswer');
+    Route::post('getPoll', 'PollsController@getPoll');
+    Route::post('getAllPolls', 'PollsController@getAllPolls');
+    Route::post('getAllPollsToFill', 'PollsController@getAllPollsToFill');
+    Route::post('deletePoll', 'PollsController@deletePoll');
+
 });
 
 

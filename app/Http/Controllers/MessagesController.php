@@ -20,21 +20,21 @@ class MessagesController extends Controller
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
             ], Response::HTTP_OK);
         } else {
-
+            $milliseconds = round(microtime(true) * 1000);
             $message = new Messages();
             $message->messageText = $request->messageText;
             $message->messageType = $request->messageType;
             $message->messageByName = $request->messageByName;
             $message->imageUrl = $request->imageUrl;
             $message->audioUrl = $request->audioUrl;
-//            $message->mediaTime = $request->mediaTime;
+            $message->mediaTime = $request->mediaTime;
             $message->filename = $request->filename;
             $message->messageByPicUrl = $request->messageByPicUrl;
             $message->videoUrl = $request->videoUrl;
             $message->documentUrl = $request->documentUrl;
             $message->messageById = $request->messageById;
             $message->roomId = $request->roomId;
-            $message->time = $request->time;
+            $message->time = $milliseconds;
             $message->save();
 
 //            $chatRoom = Rooms::find($request->roomId);
@@ -94,6 +94,29 @@ class MessagesController extends Controller
             ], Response::HTTP_OK);
         } else {
 
+            $messages = DB::table('messages')->where('roomId', $request->roomId)->
+            orderBy('id', 'desc')->take(100)->get();
+
+            return response()->json([
+                'code' => Response::HTTP_OK, 'message' => "false",
+                'messages' => $messages
+
+                ,
+            ], Response::HTTP_OK);
+        }
+    }
+
+    public function deleteMessageFroAll(Request $request)
+    {
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+            DB::table('messages')
+                ->where('id', $request->id)
+                ->update(['messageType' => 'DELETED']);
             $messages = DB::table('messages')->where('roomId', $request->roomId)->
             orderBy('id', 'desc')->take(100)->get();
 

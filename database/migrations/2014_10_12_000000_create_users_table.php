@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->text('picUrl')->nullable();
             $table->text('thumbnailUrl')->nullable();
             $table->string('dob')->nullable();
+            $table->bigInteger('time');
             $table->string('fcmKey')->nullable();
             $table->string('phone');
             $table->rememberToken();

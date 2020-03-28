@@ -65,6 +65,8 @@ class UserController extends Controller
                         'code' => 302, 'message' => 'Empty params',
                     ], Response::HTTP_OK);
                 } else {
+                    $milliseconds = round(microtime(true) * 1000);
+
                     $abc = Hash::make($request->password);
                     $user = new User();
                     $user->name = $request->name;
@@ -122,7 +124,9 @@ class UserController extends Controller
             $user->phone = $request->phone;
             $user->gender = $request->gender;
             $user->update();
-            DB::update('update messages set messageByPicUrl = ' . $request->thumbnailUrl . 'where messageById=' . $request->id);
+            DB::table('messages')
+                ->where('messageById', $request->id)
+                ->update(['messageByPicUrl' => $request->thumbnailUrl]);
             return response()->json([
                 'code' => Response::HTTP_OK, 'message' => "false", 'user' => $user
             ], Response::HTTP_OK);
