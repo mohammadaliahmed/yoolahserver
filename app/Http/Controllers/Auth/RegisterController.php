@@ -65,14 +65,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-        return User::create([
+        $my_rand_strng = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -25);
+        $ema=$data['email'];
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
+            'email_verified' => false,
+            'randomcode' => $my_rand_strng
+
 //            'password' => md5($data['password']),
-        ]);
+        ]);;
+        $data = "Please click on the following link to verify your email\nhttp://yoolah.acnure.com/verify/" . $my_rand_strng;
+
+        if (mail($ema, "Email Verification", $data)) {
+            return;
+        } else {
+            echo 'issue';
+        }
+
 
     }
 }

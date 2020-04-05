@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Room {{$room->title}}</div>
+                    <div class="card-header"></div>
 
                     <div class="card-body">
 
@@ -16,9 +16,15 @@
                                 </div>
                                 <div class="col-sm">
 
-                                    <img width="250px" src="../public/qr/{{$room->qrUrl}}">
+                                    <img width="300px" height="300px" class="rounded-circle"
+                                         src="../public/images/{{$user->thumbnailUrl}}">
+
+                                    <h4>Name: {{$user->name}} </h4>
+                                    <h4>Email: {{$user->email}} </h4>
+                                    <h4>Phone:{{$user->phone}} </h4>
                                 </div>
                                 <div class="col-sm">
+
 
                                 </div>
                             </div>

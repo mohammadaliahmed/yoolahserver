@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Constants;
+use App\QrCodes;
 use App\Rooms;
+use App\RoomUsers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -53,7 +55,7 @@ class RoomsController extends Controller
         ]);
 
         QrCode::format('png')->size(300)
-            ->generate('http://yoolah.com/r/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
+            ->generate('http://yoolah.com/room/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
 
         $roomm = Rooms::find($room->id);
         $roomm->qr_code = $room->id . 'qrcode.png';
@@ -69,7 +71,10 @@ class RoomsController extends Controller
     public function viewroom(Request $request, $id)
     {
         $room = Rooms::find($id);
-        $members = DB::select("Select * from users where id IN(Select user_id from room_users where room_id=" . $room->id . ")");
+        $members = DB::select("SELECT *
+                                          FROM users, room_users
+                                          WHERE users.id=room_users.user_id and room_users.room_id=" . $room->id . "
+                                          GROUP BY users.email");
 
 
         return view('viewroom')->with('room', $room)->with('members', $members);
@@ -77,13 +82,70 @@ class RoomsController extends Controller
 
     }
 
-    public function sendmail(Request $request)
+    public function removeUserFromGroup(Request $request, $roomId, $userId)
     {
-//        $this->mailTo($request['email'], 8);
-        $msg = "http://yoolah.com/r/" . '8';
-        $abc = "http://yoolah.acnure.com/viewqr/8";
-        $msg = $msg . "<br>" . $abc;
+        DB::table('room_users')->where('room_id', $roomId)->where('user_id', $userId)->delete();
+
+
+        $room = Rooms::find($roomId);
+
+        $members = DB::select("SELECT *
+                                          FROM users, room_users
+                                          WHERE users.id=room_users.user_id and room_users.room_id=" . $room->id . "
+                                          GROUP BY users.email");
+
+        return redirect()->back();
+
+
+    }
+
+    public function managePrivileges(Request $request, $roomId, $userId, $status)
+    {
+//        $roomUser = DB::table('room_users')->where('room_id', $roomId)->where('user_id', $userId)->first();
+        $val = 0;
+        if ($status == 'active') {
+            $val = 1;
+        }
+
+        DB::table('room_users')
+            ->where('room_id', $roomId)
+            ->where('user_id', $userId)
+            ->update(['can_message' => $val]);
+
+
+        return redirect()->back();
+
+
+    }
+
+    public function sendmail(Request $request, $id)
+    {
+        $email = $request['email'];
+
+
+        $milliseconds = round(microtime(true) * 1000);
+
+
+        $qrCode = new QrCodes();
+        $qrCode->qr_url = $milliseconds . 'qrcode.png';
+        $qrCode->room_id = $id;
+        $qrCode->used = false;
+        $qrCode->save();
+
+        QrCode::format('png')->size(300)
+            ->generate('http://yoolah.com/qr/' . $qrCode->id, public_path('qr/' . $milliseconds . 'qrcode.png'));
+
+        $room = Rooms::find($id);
+
+
+        $msg = 'Use the follwing code to enter the group<br><br> Group code: ' . $room->roomcode;
+
+        $msg = $msg . "<br><br><br>Or Click on the following link: http://yoolah.acnure.com/viewqr/" . $qrCode->id;
+
+
+//        return $msg;
         mail($request['email'], "Invitation to Yoolah group", $msg);
+
 
         return redirect()->back()->with('message', 'Mail Sent');
 

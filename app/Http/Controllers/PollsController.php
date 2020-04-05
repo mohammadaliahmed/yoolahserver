@@ -44,9 +44,13 @@ class PollsController extends Controller
         } else {
 
             $poll = Polls::find($request->id);
-            $pollAnswer = DB::table('poll_answers')->where('pollId',$poll->id)->where('userId',$request->userId)->first();
+            $pollAnswer = DB::table('poll_answers')->where('pollId', $poll->id)->where('userId', $request->userId)->first();
+            $polll = DB::table('poll_answers')->where('pollId', $poll->id)->get();
+
+            $poll->answers = $polll;
+
             return response()->json([
-                'code' => Response::HTTP_OK, 'message' => "false", 'poll' => $poll,'pollAnswer'=>$pollAnswer
+                'code' => Response::HTTP_OK, 'message' => "false", 'poll' => $poll, 'pollAnswer' => $pollAnswer
             ], Response::HTTP_OK);
 
         }
@@ -77,8 +81,18 @@ class PollsController extends Controller
                 $pollAnswer->option = $request->option;
                 $pollAnswer->userId = $request->userId;
                 $pollAnswer->save();
+
+                $poll = Polls::find($request->pollId);
+
+
+                $pollAnswer = DB::table('poll_answers')->where('pollId', $poll->pollId)
+                    ->where('userId', $request->userId)->first();
+                $polll = DB::table('poll_answers')->where('pollId', $poll->pollId)->get();
+
+                $poll->answers = $polll;
+
                 return response()->json([
-                    'code' => Response::HTTP_OK, 'message' => "false"
+                    'code' => Response::HTTP_OK, 'message' => "false", 'poll' => $poll, 'pollAnswer' => $pollAnswer
                 ], Response::HTTP_OK);
 
             }

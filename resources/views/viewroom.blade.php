@@ -19,7 +19,7 @@
                                     <img width="250px" src="../public/qr/{{$room->qr_code}}">
                                     <h2>Group Id: {{$room->roomcode}}</h2>
                                 </div>
-                               
+
                                 <div class="col-sm">
 
                                 </div>
@@ -37,7 +37,7 @@
 
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('sendmail') }}">
+                        <form method="POST" action="{{ route('sendmail', $room->id)}}">
                             @csrf
                             <div class="form-group row">
                                 <label for="name"
@@ -73,7 +73,7 @@
                 <br>
 
                 <div class="card">
-                    <div class="card-header">Participants</div>
+                    <div class="card-header">Participants {{sizeof($members).'/'.$room->members}}</div>
 
                     <div class="card-body">
                         <div class="col-sm-12">
@@ -105,6 +105,10 @@
                                         aria-label="Action: activate to sort column ascending" style="width: 77px;">
                                         Action
                                     </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                        aria-label="Action: activate to sort column ascending" style="width: 50px;">
+                                        Can Message
+                                    </th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -113,15 +117,37 @@
 
 
                                     <tr role="row" class="even">
-                                        <td class="sorting_1">{{$member->id}}</td>
+                                        <td class="sorting_1">{{$member->user_id}}</td>
                                         <td>{{$member->name}}</td>
                                         <td>{{$member->email}}</td>
                                         <td>{{$member->phone}}</td>
+                                        {{--<td>{{$member->can_message}}</td>--}}
 
-                                        <th><a href="viewgroup/{{$member->id}}"
+                                        <td><a href="../viewUserProfile/{{$member->user_id}}"
                                                class="btn btn-primary" data-toggle="tooltip"
                                                title="Show Details">View</a>
-                                        </th>
+
+                                            <a href="../removeUserFromGroup/{{$room->id}}/{{$member->user_id}}"
+                                               class="btn btn-danger " data-toggle="tooltip"
+                                               title="Remove">Remove</a>
+
+                                        </td>
+                                        <td>
+                                            @if($member->can_message==0)
+                                                <a href="roomusers/{{$member->room_id}}/{{$member->user_id}}/active"
+                                                   class="btn btn-danger btn-xs"
+                                                   data-toggle="tooltip" title="Click to activate"
+                                                   data-original-title="Click To Active">Cannot
+                                                    message</a>
+
+                                            @else
+                                                <a href="roomusers/{{$member->room_id}}/{{$member->user_id}}/deactive"
+                                                   class="btn btn-success btn-xs"
+                                                   data-toggle="tooltip" title="Click to deactivate"
+                                                   data-original-title="Click To De-Active">Can Message</a>
+                                            @endif
+
+                                        </td>
                                     </tr>
                                 </tbody>
                                 @endforeach
@@ -132,4 +158,5 @@
             </div>
         </div>
     </div>
+
 @endsection

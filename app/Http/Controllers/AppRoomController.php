@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Constants;
+use App\QrCodes;
 use App\Rooms;
 use App\RoomUsers;
 use Illuminate\Http\Request;
@@ -29,13 +30,14 @@ class AppRoomController extends Controller
 
     public function getRoomDetailsFromID(Request $request)
     {
+
         if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
             return response()->json([
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
             ], Response::HTTP_OK);
         } else {
             $room = DB::table('rooms')->where('roomcode', $request->code)->first();
-            if ($room==null) {
+            if ($room == null) {
                 return response()->json([
                     'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
                 ], Response::HTTP_NOT_FOUND);
@@ -49,7 +51,6 @@ class AppRoomController extends Controller
         }
     }
 
-    public
     function addUserToRoom(Request $request)
     {
         if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
@@ -57,6 +58,46 @@ class AppRoomController extends Controller
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
             ], Response::HTTP_OK);
         } else {
+
+            $qrCode = QrCodes::find($request->qr_id);
+            if ($qrCode->used == 1) {
+                return response()->json([
+                    'code' => Response::HTTP_FORBIDDEN, 'message' => "Code already Used"
+                ], Response::HTTP_FORBIDDEN);
+            } else {
+                $qrCode->used = true;
+                $qrCode->update();
+
+                $roomUser = DB::table('room_users')->where('room_id', $qrCode->room_id)
+                    ->where('user_id', $request->user_id)->first();
+                if ($roomUser != null) {
+
+                } else {
+                    $roomUser = new RoomUsers();
+                    $roomUser->room_id = $qrCode->room_id;
+                    $roomUser->user_id = $request->user_id;
+                    $roomUser->can_message = 0;
+                    $roomUser->save();
+                }
+                return response()->json([
+                    'code' => Response::HTTP_OK, 'message' => "false", 'roomId' => $qrCode->room_id
+                ], Response::HTTP_OK);
+            }
+
+        }
+
+    }
+
+    public
+    function addUserToRoomWithRoomId(Request $request)
+    {
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+
             $roomUser = DB::table('room_users')->where('room_id', $request->room_id)
                 ->where('user_id', $request->user_id)->first();
             if ($roomUser != null) {
@@ -69,11 +110,27 @@ class AppRoomController extends Controller
                 $roomUser->save();
             }
             return response()->json([
-                'code' => Response::HTTP_OK, 'message' => "false"
+                'code' => Response::HTTP_OK, 'message' => "false", 'roomId' => $request->room_id
             ], Response::HTTP_OK);
 
         }
 
+    }
+
+
+    public
+    function removeParticipant(Request $request)
+    {
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+            DB::table('room_users')->where('room_id', $request->roomId)->where('user_id', $request->userId)->delete();
+            return response()->json([
+                'code' => Response::HTTP_OK, 'message' => "false"
+            ], Response::HTTP_OK);
+        }
     }
 
     public
@@ -86,8 +143,14 @@ class AppRoomController extends Controller
         } else {
             $room = Rooms::find($request->roomId);
             $users = DB::select('select * from users where id in(select user_id from room_users where room_id=' . $request->roomId . ')');
+
+
+            $roomUser = DB::table('room_users')
+                ->where('room_id', $request->roomId)
+                ->where('user_id', $request->userId)->first();
+
             return response()->json([
-                'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room, 'users' => $users
+                'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room, 'users' => $users, 'canMessage' => $roomUser->can_message
             ], Response::HTTP_OK);
         }
     }
@@ -112,7 +175,12 @@ class AppRoomController extends Controller
     public
     function viewqr(Request $request, $id)
     {
-        $room = Rooms::find($id);
+
+//
+        $qrcode = QrCodes::find($id);
+
+        $room = Rooms::find($qrcode->room_id);
+        $room->qrUrl = $qrcode->qr_url;
 
         return view('viewqr')->with('room', $room);
 

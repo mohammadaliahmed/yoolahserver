@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Constants;
 use App\User;
+use function contains;
+use function hasKey;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +16,32 @@ use Illuminate\Support\Facades\Mail;
 class UserController extends Controller
 {
     //
+
+    public function viewUserProfile(Request $request, $id)
+    {
+        $user=User::find($id);
+
+        return view('viewuser')->with('user', $user);
+
+    }
+
+    public function verify(Request $request, $id)
+    {
+//        $user=User::find(10);
+        $user = DB::table('users')->where('randomcode', $id)->first();
+        if ($user != null) {
+            $user = User::find($user->id);
+            $user->email_verified = true;
+            $user->update();
+
+            return redirect('home');
+
+
+        } else {
+            return 'Wrong url';
+        }
+    }
+
     public function login(Request $request)
     {
 
@@ -47,7 +75,7 @@ class UserController extends Controller
         if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
             return response()->json([
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
-            ], Response::HTTP_OK);
+            ], Response::HTTP_FORBIDDEN);
         } else {
             $user = DB::table('users')
                 ->where('email', $request->email)
@@ -66,6 +94,8 @@ class UserController extends Controller
                     ], Response::HTTP_OK);
                 } else {
                     $milliseconds = round(microtime(true) * 1000);
+                    $my_rand_strng = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -25);
+
 
                     $abc = Hash::make($request->password);
                     $user = new User();
@@ -75,7 +105,9 @@ class UserController extends Controller
                     $user->dob = $request->dob;
                     $user->gender = $request->gender;
                     $user->password = $abc;
+                    $user->email_verified = false;
                     $user->phone = $request->phone;
+                    $user->randomcode = $my_rand_strng;
                     $user->save();
 //            $this->sendMail($request->email);
                     return response()->json([
@@ -123,6 +155,10 @@ class UserController extends Controller
             $user->name = $request->name;
             $user->phone = $request->phone;
             $user->gender = $request->gender;
+            if ($request->has("email")) {
+                $user->email = $request->email;
+
+            }
             $user->update();
             DB::table('messages')
                 ->where('messageById', $request->id)

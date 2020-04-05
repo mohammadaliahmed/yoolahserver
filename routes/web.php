@@ -28,8 +28,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/create', 'RoomsController@create')->name('create');
 Route::get('/viewroom/{id}', 'RoomsController@viewroom')->name('viewroom');
+Route::get('/viewUserProfile/{id}', 'UserController@viewUserProfile')->name('viewUserProfile');
+Route::get('/removeUserFromGroup/{roomId}/{userId}', 'RoomsController@removeUserFromGroup')->name('removeUserFromGroup');
+Route::get('/viewroom/roomusers/{roomId}/{userId}/{status}', 'RoomsController@managePrivileges')->name('managePrivileges');
 Route::get('/viewqr/{id}', 'AppRoomController@viewqr')->name('viewqr');
+Route::get('/verify/{id}', 'UserController@verify')->name('verify');
 Route::post('/createroom', 'RoomsController@createroom')->name('createroom');
-Route::post('/sendmail', 'RoomsController@sendmail')->name('sendmail');
+Route::post('/sendmail/{id}', 'RoomsController@sendmail')->name('sendmail');
 
 

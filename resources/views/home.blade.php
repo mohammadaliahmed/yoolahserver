@@ -4,19 +4,35 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Dashboard</div>
 
-                    <div class="card-body">
-                        <a href="{{ route('create') }}">
+                @if($user->email_verified==0)
+                    <div class="alert alert-danger" role="alert">
 
-                            <button type="submit" name="submit" class="btn btn-primary">
-                                {{ __('Create group') }}
-                            </button>
-                        </a>
-
+                        Your email is not verified. Please check email
                     </div>
-                </div>
+                @else
+
+
+
+
+                    <div class="card">
+
+                        <div class="card-header">Dashboard</div>
+
+
+                        <div class="card-body">
+
+                            <a href="{{ route('create') }}">
+
+
+                                <button type="submit" name="submit" class="btn btn-primary">
+                                    {{ __('Create group') }}
+                                </button>
+                            </a>
+
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
