@@ -60,6 +60,12 @@ class RoomsController extends Controller
         $roomm = Rooms::find($room->id);
         $roomm->qr_code = $room->id . 'qrcode.png';
         $roomm->update();
+//
+        $roomUser = new RoomUsers();
+        $roomUser->room_id = $room->id;
+        $roomUser->user_id = $userId;
+        $roomUser->can_message = true;
+        $roomUser->save();
 
 //        return redirect()->back()->with('message', 'Room Created');
 //        return view('viewroom')->with('room', $room->id);
@@ -138,9 +144,9 @@ class RoomsController extends Controller
         $room = Rooms::find($id);
 
 
-        $msg = 'Use the follwing code to enter the group<br><br> Group code: ' . $room->roomcode;
+        $msg = 'Use the follwing code to enter the group\n\n Group code: ' . $room->roomcode;
 
-        $msg = $msg . "<br><br><br>Or Click on the following link: http://yoolah.acnure.com/viewqr/" . $qrCode->id;
+        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.acnure.com/viewqr/" . $qrCode->id;
 
 
 //        return $msg;

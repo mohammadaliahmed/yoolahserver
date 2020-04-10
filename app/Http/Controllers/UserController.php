@@ -45,7 +45,7 @@ class UserController extends Controller
     public function login(Request $request)
     {
 
-        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+        if ($request->api_username != Constants::$API_USERNAME || $request->api_password != Constants::$API_PASSOWRD) {
             return response()->json([
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
             ], Response::HTTP_OK);
@@ -79,8 +79,6 @@ class UserController extends Controller
         } else {
             $user = DB::table('users')
                 ->where('email', $request->email)
-                ->orWhere('username', $request->username)
-                ->orWhere('phone', $request->phone)
                 ->first();
             if ($user != null) {
                 return response()->json([
