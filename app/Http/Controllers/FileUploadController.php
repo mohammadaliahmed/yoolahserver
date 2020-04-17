@@ -38,14 +38,12 @@ class FileUploadController extends Controller
 //                ,
 //            ], Response::HTTP_OK);
         } else if ($request->has('document')) {
-            $file_name = $milliseconds;
+            $file_name = $milliseconds . $request->extension;
+
             $path = $request->file('document')->move(public_path("/document"), $file_name);
             $photo_url = url('/document/' . $file_name);
             echo $file_name;
-//            return response()->json([
-//                'code' => Response::HTTP_OK, 'message' => "false", 'url' => $file_name
-//                ,
-//            ], Response::HTTP_OK);
+
         } else {
             return response()->json([
                 'code' => 401, 'message' => "false", 'url' => "sdfsdfsd"

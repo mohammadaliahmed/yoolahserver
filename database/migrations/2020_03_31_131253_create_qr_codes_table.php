@@ -17,6 +17,7 @@ class CreateQrCodesTable extends Migration
             $table->id();
             $table->string('qr_url');
             $table->integer('room_id');
+            $table->string('randomcode');
             $table->boolean('used');
             $table->timestamps();
         });

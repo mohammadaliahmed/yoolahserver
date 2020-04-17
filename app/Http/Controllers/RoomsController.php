@@ -131,26 +131,27 @@ class RoomsController extends Controller
 
         $milliseconds = round(microtime(true) * 1000);
 
-
+        $randomcode = Constants::generateRandomString(20);
         $qrCode = new QrCodes();
         $qrCode->qr_url = $milliseconds . 'qrcode.png';
         $qrCode->room_id = $id;
         $qrCode->used = false;
+        $qrCode->randomcode = $randomcode;
         $qrCode->save();
 
         QrCode::format('png')->size(300)
-            ->generate('http://yoolah.com/qr/' . $qrCode->id, public_path('qr/' . $milliseconds . 'qrcode.png'));
+            ->generate('http://yoolah.com/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
 
         $room = Rooms::find($id);
 
 
         $msg = 'Use the follwing code to enter the group\n\n Group code: ' . $room->roomcode;
 
-        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.acnure.com/viewqr/" . $qrCode->id;
+        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.acnure.com/viewqr/" . $randomcode;
 
 
-//        return $msg;
-        mail($request['email'], "Invitation to Yoolah group", $msg);
+        return $msg;
+//        mail($request['email'], "Invitation to Yoolah group", $msg);
 
 
         return redirect()->back()->with('message', 'Mail Sent');

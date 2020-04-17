@@ -59,14 +59,16 @@ class AppRoomController extends Controller
             ], Response::HTTP_OK);
         } else {
 
-            $qrCode = QrCodes::find($request->qr_id);
+//            $qrCode = QrCodes::find($request->qr_id);
+            $qrCode = DB::table('qr_codes')->where('randomcode', $request->qr_id)->first();
             if ($qrCode->used == 1) {
                 return response()->json([
                     'code' => Response::HTTP_FORBIDDEN, 'message' => "Code already Used"
                 ], Response::HTTP_FORBIDDEN);
             } else {
-                $qrCode->used = true;
-                $qrCode->update();
+                $qrCod=QrCodes::find($qrCode->id);
+                $qrCod->used = true;
+                $qrCod->update();
 
                 $roomUser = DB::table('room_users')->where('room_id', $qrCode->room_id)
                     ->where('user_id', $request->user_id)->first();
@@ -177,7 +179,8 @@ class AppRoomController extends Controller
     {
 
 //
-        $qrcode = QrCodes::find($id);
+//        $qrcode = QrCodes::find($id);
+        $qrcode = DB::table('qr_codes')->where('randomcode', $id)->first();
 
         $room = Rooms::find($qrcode->room_id);
         $room->qrUrl = $qrcode->qr_url;
