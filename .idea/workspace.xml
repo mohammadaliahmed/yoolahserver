@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="614feda6-60a6-499a-9928-af72ffd8280d" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Constants.php" afterPath="$PROJECT_DIR$/app/Constants.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FileUploadController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FileUploadController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2020_03_31_131253_create_qr_codes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_03_31_131253_create_qr_codes_table.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
@@ -120,28 +115,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RoomsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RoomsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
-              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="153" column="22" lean-forward="true" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
-                <marker date="1587105981573" expanded="true" signature="631:726" ph="Select * fro... users" />
-                <marker date="1587105981573" expanded="true" signature="663:708" ph="Select user_... room_users" />
-                <marker date="1587105981573" expanded="true" signature="2093:2266" ph="SELECT * FRO... users" />
-                <marker date="1587105981573" expanded="true" signature="2093:2346" ph="SELECT * FRO... users" />
-                <marker date="1587105981573" expanded="true" signature="2693:2946" ph="SELECT * FRO... users" />
+                <marker date="1587108592812" expanded="true" signature="631:726" ph="Select * fro... users" />
+                <marker date="1587108592812" expanded="true" signature="663:708" ph="Select user_... room_users" />
+                <marker date="1587108592812" expanded="true" signature="2093:2266" ph="SELECT * FRO... users" />
+                <marker date="1587108592812" expanded="true" signature="2093:2346" ph="SELECT * FRO... users" />
+                <marker date="1587108592812" expanded="true" signature="2693:2946" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppRoomController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppRoomController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="79" column="49" lean-forward="false" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
+            <state relative-caret-position="294">
+              <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
                 <marker date="1587108375986" expanded="true" signature="5401:5503" ph="select * fro... users" />
                 <marker date="1587108375986" expanded="true" signature="5433:5478" ph="select user_... room_users" />
@@ -231,8 +226,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/FileUploadController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_03_31_131253_create_qr_codes_table.php" />
         <option value="$PROJECT_DIR$/app/Constants.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
       </list>
     </option>
   </component>
@@ -648,12 +643,12 @@
       <workItem from="1586516590655" duration="4493000" />
       <workItem from="1586702954526" duration="15000" />
       <workItem from="1586852965398" duration="1459000" />
-      <workItem from="1586934299483" duration="5514000" />
+      <workItem from="1586934299483" duration="5690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76709000" />
+    <option name="totallyTimeSpent" value="76885000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1069,28 +1064,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+        <state relative-caret-position="294">
+          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-            <marker date="1587105981573" expanded="true" signature="631:726" ph="Select * fro... users" />
-            <marker date="1587105981573" expanded="true" signature="663:708" ph="Select user_... room_users" />
-            <marker date="1587105981573" expanded="true" signature="2093:2266" ph="SELECT * FRO... users" />
-            <marker date="1587105981573" expanded="true" signature="2093:2346" ph="SELECT * FRO... users" />
-            <marker date="1587105981573" expanded="true" signature="2693:2946" ph="SELECT * FRO... users" />
+            <marker date="1587108375986" expanded="true" signature="5401:5503" ph="select * fro... users" />
+            <marker date="1587108375986" expanded="true" signature="5433:5478" ph="select user_... room_users" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="79" column="49" lean-forward="false" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
+        <state relative-caret-position="357">
+          <caret line="153" column="22" lean-forward="true" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
           <folding>
-            <marker date="1587108375986" expanded="true" signature="5401:5503" ph="select * fro... users" />
-            <marker date="1587108375986" expanded="true" signature="5433:5478" ph="select user_... room_users" />
+            <element signature="e#40#58#0#PHP" expanded="true" />
+            <marker date="1587108592812" expanded="true" signature="631:726" ph="Select * fro... users" />
+            <marker date="1587108592812" expanded="true" signature="663:708" ph="Select user_... room_users" />
+            <marker date="1587108592812" expanded="true" signature="2093:2266" ph="SELECT * FRO... users" />
+            <marker date="1587108592812" expanded="true" signature="2093:2346" ph="SELECT * FRO... users" />
+            <marker date="1587108592812" expanded="true" signature="2693:2946" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>

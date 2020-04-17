@@ -150,8 +150,8 @@ class RoomsController extends Controller
         $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.acnure.com/viewqr/" . $randomcode;
 
 
-        return $msg;
-//        mail($request['email'], "Invitation to Yoolah group", $msg);
+//        return $msg;
+        mail($request['email'], "Invitation to Yoolah group", $msg);
 
 
         return redirect()->back()->with('message', 'Mail Sent');
