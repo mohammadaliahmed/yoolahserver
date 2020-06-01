@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class UserController extends Controller
 {
@@ -19,7 +20,7 @@ class UserController extends Controller
 
     public function viewUserProfile(Request $request, $id)
     {
-        $user=User::find($id);
+        $user = User::find($id);
 
         return view('viewuser')->with('user', $user);
 
@@ -69,6 +70,32 @@ class UserController extends Controller
 
     }
 
+    public function loginWithId(Request $request)
+    {
+
+        if ($request->api_username != Constants::$API_USERNAME || $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+            $user = DB::table('users')
+                ->where('randomcode', $request->randomcode)
+                ->first();
+
+            if ($user != null) {
+                return response()->json([
+                    'code' => 200, 'message' => 'false', 'user' => $user
+                ], Response::HTTP_OK);
+            } else {
+                return response()->json([
+                    'code' => 302, 'message' => 'Wrong Id',
+                ], Response::HTTP_OK);
+            }
+        }
+
+    }
+
     public function register(Request $request)
     {
 
@@ -92,8 +119,9 @@ class UserController extends Controller
                     ], Response::HTTP_OK);
                 } else {
                     $milliseconds = round(microtime(true) * 1000);
-                    $my_rand_strng = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -25);
-
+                    $my_rand_strng = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -15);
+                    QrCode::format('png')->size(300)
+                        ->generate('http://yoolah.com/user/' . $my_rand_strng, public_path('qr/' . $my_rand_strng . 'qrcode.png'));
 
                     $abc = Hash::make($request->password);
                     $user = new User();
@@ -151,12 +179,12 @@ class UserController extends Controller
             $user = User::find($request->id);
             $user->thumbnailUrl = $request->thumbnailUrl;
             $user->name = $request->name;
-            $user->phone = $request->phone;
-            $user->gender = $request->gender;
-            if ($request->has("email")) {
-                $user->email = $request->email;
-
-            }
+//            $user->phone = $request->phone;
+//            $user->gender = $request->gender;
+//            if ($request->has("email")) {
+//                $user->email = $request->email;
+//
+//            }
             $user->update();
             DB::table('messages')
                 ->where('messageById', $request->id)

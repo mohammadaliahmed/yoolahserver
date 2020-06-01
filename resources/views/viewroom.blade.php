@@ -91,15 +91,15 @@
                                         aria-label="Created At: activate to sort column ascending"
                                         style="width: 178px;">Name
                                     </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        aria-label="Products: activate to sort column ascending" style="width: 100px;">
-                                        Email
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        aria-label="Payment Type: activate to sort column ascending"
-                                        style="width: 100px;">
-                                        Phone
-                                    </th>
+                                    {{--<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"--}}
+                                        {{--aria-label="Products: activate to sort column ascending" style="width: 100px;">--}}
+                                        {{--Email--}}
+                                    {{--</th>--}}
+                                    {{--<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"--}}
+                                        {{--aria-label="Payment Type: activate to sort column ascending"--}}
+                                        {{--style="width: 100px;">--}}
+                                        {{--Phone--}}
+                                    {{--</th>--}}
 
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                                         aria-label="Action: activate to sort column ascending" style="width: 77px;">
@@ -119,8 +119,8 @@
                                     <tr role="row" class="even">
                                         <td class="sorting_1">{{$member->user_id}}</td>
                                         <td>{{$member->name}}</td>
-                                        <td>{{$member->email}}</td>
-                                        <td>{{$member->phone}}</td>
+                                        {{--<td>{{$member->email}}</td>--}}
+                                        {{--<td>{{$member->phone}}</td>--}}
                                         {{--<td>{{$member->can_message}}</td>--}}
 
                                         <td><a href="../viewUserProfile/{{$member->user_id}}"
