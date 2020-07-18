@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Constants;
+use App\MailPhp;
 use App\QrCodes;
 use App\Rooms;
 use App\RoomUsers;
@@ -163,15 +164,17 @@ class RoomsController extends Controller
     {
 
 
-        $data = [
-            'data' => "http://yoolah.com/r/",
 
-        ];
-        $email = "m.aliahmed0@gmail.com";
-        Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
-            $message->to($email)->subject("Invitation to Yoolah group");
-            $message->from('chat@gmail.com', 'Chat App');
-        });
+//
+//        $data = [
+//            'data' => "http://yoolah.com/r/",
+//
+//        ];
+//        $email = "m.aliahmed0@gmail.com";
+//        Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
+//            $message->to($email)->subject("Invitation to Yoolah group");
+//            $message->from('chat@gmail.com', 'Chat App');
+//        });
 
     }
 

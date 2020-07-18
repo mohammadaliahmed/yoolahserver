@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Constants;
+use App\MailPhp;
 use App\QrCodes;
 use App\Rooms;
 use App\RoomUsers;
@@ -188,5 +189,10 @@ class AppRoomController extends Controller
         return view('viewqr')->with('room', $room);
 
 
+    }
+
+    public function mailTo(){
+        $mail=new MailPhp();
+        $mail->sendmail();
     }
 }
