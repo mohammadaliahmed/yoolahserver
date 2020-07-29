@@ -10,6 +10,7 @@ use App\RoomUsers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use function sizeof;
 
 class AppRoomController extends Controller
@@ -67,7 +68,7 @@ class AppRoomController extends Controller
                     'code' => Response::HTTP_FORBIDDEN, 'message' => "Code already Used"
                 ], Response::HTTP_FORBIDDEN);
             } else {
-                $qrCod=QrCodes::find($qrCode->id);
+                $qrCod = QrCodes::find($qrCode->id);
                 $qrCod->used = true;
                 $qrCod->update();
 
@@ -191,8 +192,38 @@ class AppRoomController extends Controller
 
     }
 
-    public function mailTo(){
-        $mail=new MailPhp();
-        $mail->sendmail();
+    public function mailTo()
+    {
+
+
+        $url = 'http://58.27.201.82/mail/index.php';
+        $data = array('email' => 'm.aliahmed0@gmail.com', 'message' => 'sdfsdfsdfsdlkfjwlkejrljk');
+
+// use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        if ($result === FALSE) { /* Handle error */ }
+
+        var_dump($result);
+
+          return response()->json([
+        'code' => Response::HTTP_OK, 'message' => $result
+    ], Response::HTTP_OK);
+
+//        $to_name = 'ali';
+//        $to_email = 'm.aliahmed0@gmail.com';
+//        $data = array('name' => "Ogbonna Vitalis(sender_name)", "body" => "A test mail");
+//        Mail::send('emails . mail', $data, function ($message) use ($to_name, $to_email) {
+//            $message->to($to_email, $to_name)->subject('Laravel Test Mail');
+//            $message->from('SENDER_EMAIL_ADDRESS', 'Test Mail');
+//        });
+
     }
 }

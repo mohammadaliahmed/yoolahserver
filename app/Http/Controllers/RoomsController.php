@@ -8,6 +8,7 @@ use App\QrCodes;
 use App\Rooms;
 use App\RoomUsers;
 use App\User;
+use function http_get;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use function urldecode;
+use function urlencode;
 
 class RoomsController extends Controller
 {
@@ -141,20 +144,28 @@ class RoomsController extends Controller
         $qrCode->save();
 
         QrCode::format('png')->size(300)
-            ->generate('http://yoolah.com/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
+            ->generate('http://yoolah.net/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
 
         $room = Rooms::find($id);
 
 
-        $msg = 'Use the follwing code to enter the group\n\n Group code: ' . $room->roomcode;
+        $msg = 'Use the following code to enter the group\n\n Group code: ' . $room->roomcode;
 
-        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.acnure.com/viewqr/" . $randomcode;
+        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.net/viewqr/" . $randomcode;
+        $url = 'http://58.27.201.82/mail/index.php';
+        $data = array('email' => $request['email'], 'message' => $msg);
 
-
-//        return $msg;
-        mail($request['email'], "Invitation to Yoolah group", $msg);
-
-
+// use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+//        return $result;
         return redirect()->back()->with('message', 'Mail Sent');
 
 
@@ -164,17 +175,6 @@ class RoomsController extends Controller
     {
 
 
-
-//
-//        $data = [
-//            'data' => "http://yoolah.com/r/",
-//
-//        ];
-//        $email = "m.aliahmed0@gmail.com";
-//        Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
-//            $message->to($email)->subject("Invitation to Yoolah group");
-//            $message->from('chat@gmail.com', 'Chat App');
-//        });
 
     }
 
