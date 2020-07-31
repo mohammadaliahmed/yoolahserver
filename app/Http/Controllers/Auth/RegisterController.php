@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\MailPhp;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -65,7 +66,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $my_rand_strng = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -25);
-        $ema=$data['email'];
+        $ema = $data['email'];
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -77,11 +78,11 @@ class RegisterController extends Controller
         ]);;
         $data = "Please click on the following link to verify your email\nhttp://yoolah.acnure.com/verify/" . $my_rand_strng;
 
-        if (mail($ema, "Email Verification", $data)) {
-            return $user;
-        } else {
-            echo 'issue';
-        }
+
+        $mail = new MailPhp();
+        $mail->sendmail($ema, $data);
+
+        return $user;
 
 
     }

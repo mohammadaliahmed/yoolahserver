@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="614feda6-60a6-499a-9928-af72ffd8280d" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MailPhp.php" afterPath="$PROJECT_DIR$/app/MailPhp.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
@@ -118,51 +119,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AppRoomController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="194" column="20" lean-forward="false" selection-start-line="194" selection-start-column="20" selection-end-line="194" selection-end-column="20" />
-              <folding>
-                <marker date="1596026264344" expanded="true" signature="5457:5559" ph="select * fro... users" />
-                <marker date="1596026264344" expanded="true" signature="5489:5534" ph="select user_... room_users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoomsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="168" column="25" lean-forward="true" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
-              <folding>
-                <element signature="e#40#58#0#PHP" expanded="true" />
-                <marker date="1596036089752" expanded="true" signature="719:814" ph="Select * fro... users" />
-                <marker date="1596036089752" expanded="true" signature="751:796" ph="Select user_... room_users" />
-                <marker date="1596036089752" expanded="true" signature="2181:2354" ph="SELECT * FRO... users" />
-                <marker date="1596036089752" expanded="true" signature="2181:2434" ph="SELECT * FRO... users" />
-                <marker date="1596036089752" expanded="true" signature="2781:3034" ph="SELECT * FRO... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+            <state relative-caret-position="1376">
+              <caret line="142" column="45" lean-forward="true" selection-start-line="142" selection-start-column="45" selection-end-line="142" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -172,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>-&gt;pluck</find>
       <find>sendmai</find>
       <find>partici</find>
       <find>view</find>
@@ -188,7 +148,6 @@
       <find>remove</find>
       <find>-&gt;pluk</find>
       <find>re</find>
-      <find>register</find>
       <find>register.</find>
       <find>register.b</find>
       <find>register.bl</find>
@@ -202,6 +161,8 @@
       <find>mailTo</find>
       <find>”</find>
       <find>sendmail</find>
+      <find>userMessages</find>
+      <find>register</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -224,17 +185,17 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FileUploadController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_03_31_131253_create_qr_codes_table.php" />
         <option value="$PROJECT_DIR$/app/Constants.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/viewroom.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/MailPhp.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/MailPhp.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
       </list>
     </option>
@@ -462,46 +423,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -517,7 +438,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mobilemart" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="SearchEverywhereHistoryKey" value="en&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/.env&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/.env&#10;api&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;roomco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;roomsco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;appr&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;room&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;phpma&#9;null&#9;null&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;fil&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;messagec&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/MessagesController.php&#10;fi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;viewroom&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;oom&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;roomc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;userco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;regi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/RegisterController.php&#10;appro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;view&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewqr.blade.php&#10;con&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Constants.php&#10;cons&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Constants.php&#10;messa&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/MessagesController.php&#10;filu&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;logi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/LoginController.php&#10;user&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/User.php&#10;regis&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/RegisterController.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/layouts/app.blade.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;layo&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/layout.blade.php&#10;re&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/auth/register.blade.php&#10;fileup&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;roomcon&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;login&#9;null&#9;null&#10;reg&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/auth/register.blade.php&#10;sessiong&#9;null&#9;null&#10;databa&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/config/database.php&#10;pollco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/PollsController.php&#10;viewuser&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewuser.blade.php&#10;viewp&#9;null&#9;null&#10;api.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;ro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;app.p&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/layouts/app.blade.php&#10;viewro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;viewr&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;usercon&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;layou&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/layout.blade.php&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/home.blade.php&#10;databas&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/config/database.php" />
+    <property name="SearchEverywhereHistoryKey" value="messa&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/MessagesController.php&#10;usercon&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;api&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;roomsc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;en&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/.env&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/.env&#10;roomco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;roomsco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;appr&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;room&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;phpma&#9;null&#9;null&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;fil&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;messagec&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/MessagesController.php&#10;fi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;viewroom&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;oom&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;roomc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;userco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;regi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/RegisterController.php&#10;appro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;view&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewqr.blade.php&#10;con&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Constants.php&#10;cons&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Constants.php&#10;filu&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;logi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/LoginController.php&#10;user&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/User.php&#10;regis&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/RegisterController.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/layouts/app.blade.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;layo&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/layout.blade.php&#10;re&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/auth/register.blade.php&#10;fileup&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;roomcon&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;login&#9;null&#9;null&#10;reg&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/auth/register.blade.php&#10;sessiong&#9;null&#9;null&#10;databa&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/config/database.php&#10;pollco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/PollsController.php&#10;viewuser&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewuser.blade.php&#10;viewp&#9;null&#9;null&#10;api.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;ro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;app.p&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/layouts/app.blade.php&#10;viewro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;viewr&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;layou&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/layout.blade.php&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/home.blade.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -665,12 +586,12 @@
       <workItem from="1595324176834" duration="22000" />
       <workItem from="1595920674216" duration="603000" />
       <workItem from="1596016341039" duration="5411000" />
-      <workItem from="1596035742757" duration="704000" />
+      <workItem from="1596035742757" duration="4746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104581000" />
+    <option name="totallyTimeSpent" value="108623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -729,13 +650,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/facade/flare-client-php/src/Api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -949,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="64" column="42" lean-forward="false" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/simplesoftwareio/simple-qrcode/src/SimpleSoftwareIO/QrCode/Facades/QrCode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -963,24 +870,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="224" column="0" lean-forward="true" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/viewroom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MessagesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="66" lean-forward="false" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -1026,28 +919,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/MailPhp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/http/http.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="2549" column="9" lean-forward="false" selection-start-line="2549" selection-start-column="9" selection-end-line="2549" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1063,25 +938,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="168" column="25" lean-forward="true" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
+        <state relative-caret-position="340">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/MailPhp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="62" lean-forward="false" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_7.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1025" column="9" lean-forward="false" selection-start-line="1025" selection-start-column="9" selection-end-line="1025" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="31" column="45" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MessagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="37" selection-end-column="29" />
           <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-            <marker date="1596036089752" expanded="true" signature="719:814" ph="Select * fro... users" />
-            <marker date="1596036089752" expanded="true" signature="751:796" ph="Select user_... room_users" />
-            <marker date="1596036089752" expanded="true" signature="2181:2354" ph="SELECT * FRO... users" />
-            <marker date="1596036089752" expanded="true" signature="2181:2434" ph="SELECT * FRO... users" />
-            <marker date="1596036089752" expanded="true" signature="2781:3034" ph="SELECT * FRO... users" />
+            <marker date="1585158432154" expanded="true" signature="2623:2954" ph="select * fro... messages" />
+            <marker date="1585158432154" expanded="true" signature="2711:2756" ph="select room_... room_users" />
+            <marker date="1585158432154" expanded="true" signature="2833:2887" ph="select max(i... messages" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="37" />
+        <state relative-caret-position="132">
+          <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+          <folding>
+            <marker date="1596114152128" expanded="true" signature="737:832" ph="Select * fro... users" />
+            <marker date="1596114152128" expanded="true" signature="769:814" ph="Select user_... room_users" />
+            <marker date="1596114152128" expanded="true" signature="2614:2787" ph="SELECT * FRO... users" />
+            <marker date="1596114152128" expanded="true" signature="2614:2867" ph="SELECT * FRO... users" />
+            <marker date="1596114152128" expanded="true" signature="3214:3467" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1376">
+          <caret line="142" column="45" lean-forward="true" selection-start-line="142" selection-start-column="45" selection-end-line="142" selection-end-column="45" />
           <folding />
         </state>
       </provider>

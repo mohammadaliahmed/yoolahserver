@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Constants;
 use App\MailPhp;
+use App\Messages;
 use App\QrCodes;
 use App\Rooms;
 use App\RoomUsers;
@@ -57,9 +58,10 @@ class RoomsController extends Controller
             'roomcode' => $roomCode,
 
         ]);
+        $user=User::find($userId);
 
         QrCode::format('png')->size(300)
-            ->generate('http://yoolah.com/room/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
+            ->generate('http://yoolah.net/mainRoom/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
 
         $roomm = Rooms::find($room->id);
         $roomm->qr_code = $room->id . 'qrcode.png';
@@ -70,6 +72,16 @@ class RoomsController extends Controller
         $roomUser->user_id = $userId;
         $roomUser->can_message = true;
         $roomUser->save();
+
+        $milliseconds = round(microtime(true) * 1000);
+        $message = new Messages();
+        $message->messageText = "Group Created";
+        $message->messageType = "BUBBLE";
+        $message->messageByName = $user->name;
+        $message->messageById = $user->id;
+        $message->roomId = $room->id;
+        $message->time = $milliseconds;
+        $message->save();
 
 //        return redirect()->back()->with('message', 'Room Created');
 //        return view('viewroom')->with('room', $room->id);
@@ -152,20 +164,9 @@ class RoomsController extends Controller
         $msg = 'Use the following code to enter the group\n\n Group code: ' . $room->roomcode;
 
         $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.net/viewqr/" . $randomcode;
-        $url = 'http://58.27.201.82/mail/index.php';
-        $data = array('email' => $request['email'], 'message' => $msg);
 
-// use key 'http' even if you send the request to https://...
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data)
-            )
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
-//        return $result;
+        $mail = new MailPhp();
+        $mail->sendmail($request['email'], $msg);
         return redirect()->back()->with('message', 'Mail Sent');
 
 
@@ -173,7 +174,6 @@ class RoomsController extends Controller
 
     public function mailTo()
     {
-
 
 
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Constants;
+use App\Rooms;
 use App\User;
 use function contains;
 use function hasKey;
@@ -82,6 +83,31 @@ class UserController extends Controller
             $user = DB::table('users')
                 ->where('randomcode', $request->randomcode)
                 ->first();
+
+            if ($user != null) {
+                return response()->json([
+                    'code' => 200, 'message' => 'false', 'user' => $user
+                ], Response::HTTP_OK);
+            } else {
+                return response()->json([
+                    'code' => 302, 'message' => 'Wrong Id',
+                ], Response::HTTP_OK);
+            }
+        }
+
+    }
+
+    public function loginAdmin(Request $request)
+    {
+
+        if ($request->api_username != Constants::$API_USERNAME || $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+            $room = Rooms::find($request->id);
+            $user = User::find($room->userid);
 
             if ($user != null) {
                 return response()->json([
