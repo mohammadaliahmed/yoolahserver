@@ -38,17 +38,26 @@ class AppRoomController extends Controller
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
             ], Response::HTTP_OK);
         } else {
-            $room = DB::table('rooms')->where('roomcode', $request->code)->first();
-            if ($room == null) {
+            $qr_code = DB::table("qr_codes")->where("randomcode", $request->code)->first();
+
+//            $room = DB::table('rooms')->where('roomcode', $request->code)->first();
+            if (!$qr_code){
                 return response()->json([
                     'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
                 ], Response::HTTP_NOT_FOUND);
             } else {
+                $room = Rooms::find($qr_code->room_id);
+                if ($qr_code == null) {
+                    return response()->json([
+                        'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
+                    ], Response::HTTP_NOT_FOUND);
+                } else {
 
 
-                return response()->json([
-                    'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
-                ], Response::HTTP_OK);
+                    return response()->json([
+                        'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
+                    ], Response::HTTP_OK);
+                }
             }
         }
     }
@@ -202,20 +211,21 @@ class AppRoomController extends Controller
 // use key 'http' even if you send the request to https://...
         $options = array(
             'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method' => 'POST',
                 'content' => http_build_query($data)
             )
         );
-        $context  = stream_context_create($options);
+        $context = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
-        if ($result === FALSE) { /* Handle error */ }
+        if ($result === FALSE) { /* Handle error */
+        }
 
         var_dump($result);
 
-          return response()->json([
-        'code' => Response::HTTP_OK, 'message' => $result
-    ], Response::HTTP_OK);
+        return response()->json([
+            'code' => Response::HTTP_OK, 'message' => $result
+        ], Response::HTTP_OK);
 
 //        $to_name = 'ali';
 //        $to_email = 'm.aliahmed0@gmail.com';

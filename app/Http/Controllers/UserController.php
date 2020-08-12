@@ -32,6 +32,7 @@ class UserController extends Controller
 //        $user=User::find(10);
         $user = DB::table('users')->where('randomcode', $id)->first();
         if ($user != null) {
+
             $user = User::find($user->id);
             $user->email_verified = true;
             $user->update();
@@ -145,7 +146,8 @@ class UserController extends Controller
                     ], Response::HTTP_OK);
                 } else {
                     $milliseconds = round(microtime(true) * 1000);
-                    $my_rand_strng = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -15);
+                    $my_rand_strng = Constants::generateRandomString(7);
+
                     QrCode::format('png')->size(300)
                         ->generate('http://yoolah.com/user/' . $my_rand_strng, public_path('qr/' . $my_rand_strng . 'qrcode.png'));
 

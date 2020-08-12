@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Constants;
 use App\Http\Controllers\Controller;
 use App\MailPhp;
 use App\Providers\RouteServiceProvider;
@@ -65,18 +66,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $my_rand_strng = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -25);
+        $roomCode = Constants::generateRandomString(7);
+
         $ema = $data['email'];
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'email_verified' => false,
-            'randomcode' => $my_rand_strng
+            'randomcode' => $roomCode
 
 //            'password' => md5($data['password']),
         ]);;
-        $data = "Please click on the following link to verify your email\nhttp://yoolah.acnure.com/verify/" . $my_rand_strng;
+        $data = "Please click on the following link to verify your email\nhttp://yoolah.net/verify/" . $roomCode;
 
 
         $mail = new MailPhp();

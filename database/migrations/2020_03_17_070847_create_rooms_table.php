@@ -20,7 +20,7 @@ class CreateRoomsTable extends Migration
             $table->string('title');
             $table->string('qr_code')->nullable();
             $table->integer('members');
-            $table->integer('roomcode');
+            $table->string('roomcode');
             $table->string('subtitle')->nullable();
 
             $table->timestamps();

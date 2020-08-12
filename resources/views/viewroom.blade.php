@@ -16,8 +16,10 @@
                                 </div>
                                 <div class="col-sm">
 
-                                    <img width="250px" src="../public/qr/{{$room->qr_code}}">
-                                    <h2>Group Id: {{$room->roomcode}}</h2>
+                                    {{--<img width="250px" src="../public/qr/{{$room->qr_code}}">--}}
+                                    <h2>Group Name: {{$room->title}}</h2>
+                                    <br>
+                                    <h4>Admin Id to login: {{$admin->randomcode}}</h4>
                                 </div>
 
                                 <div class="col-sm">

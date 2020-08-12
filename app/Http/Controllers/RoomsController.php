@@ -48,7 +48,8 @@ class RoomsController extends Controller
 
         $userId = Auth::id();
 
-        $roomCode = rand(1234567, 9876544);
+//        $roomCode = rand(1234567, 9876544);
+        $roomCode = Constants::generateRandomString(7);
 
         $room = Rooms::create([
             'title' => $request['title'],
@@ -58,7 +59,7 @@ class RoomsController extends Controller
             'roomcode' => $roomCode,
 
         ]);
-        $user=User::find($userId);
+        $user = User::find($userId);
 
         QrCode::format('png')->size(300)
             ->generate('http://yoolah.net/mainRoom/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
@@ -93,13 +94,14 @@ class RoomsController extends Controller
     public function viewroom(Request $request, $id)
     {
         $room = Rooms::find($id);
+        $admin = User::find($room->userid);
         $members = DB::select("SELECT *
                                           FROM users, room_users
                                           WHERE users.id=room_users.user_id and room_users.room_id=" . $room->id . "
                                           GROUP BY users.email");
 
 
-        return view('viewroom')->with('room', $room)->with('members', $members);
+        return view('viewroom')->with('room', $room)->with('members', $members)->with('admin', $admin);
 
 
     }
@@ -147,7 +149,7 @@ class RoomsController extends Controller
 
         $milliseconds = round(microtime(true) * 1000);
 
-        $randomcode = Constants::generateRandomString(20);
+        $randomcode = Constants::generateRandomString(7);
         $qrCode = new QrCodes();
         $qrCode->qr_url = $milliseconds . 'qrcode.png';
         $qrCode->room_id = $id;
@@ -161,7 +163,7 @@ class RoomsController extends Controller
         $room = Rooms::find($id);
 
 
-        $msg = 'Use the following code to enter the group\n\n Group code: ' . $room->roomcode;
+        $msg = "Use the following code to enter the group \n\n Group code: " . $randomcode;
 
         $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.net/viewqr/" . $randomcode;
 
