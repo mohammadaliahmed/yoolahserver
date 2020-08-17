@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use function sizeof;
 
 class AppRoomController extends Controller
@@ -41,7 +42,7 @@ class AppRoomController extends Controller
             $qr_code = DB::table("qr_codes")->where("randomcode", $request->code)->first();
 
 //            $room = DB::table('rooms')->where('roomcode', $request->code)->first();
-            if (!$qr_code){
+            if (!$qr_code) {
                 return response()->json([
                     'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
                 ], Response::HTTP_NOT_FOUND);
@@ -200,6 +201,39 @@ class AppRoomController extends Controller
 
 
     }
+
+
+    public function inviteUserFromApp(Request $request)
+    {
+
+
+        $milliseconds = round(microtime(true) * 1000);
+
+        $randomcode = Constants::generateRandomString(7);
+        $qrCode = new QrCodes();
+        $qrCode->qr_url = $milliseconds . 'qrcode.png';
+        $qrCode->room_id = $request->roomId;
+        $qrCode->used = false;
+        $qrCode->randomcode = $randomcode;
+        $qrCode->save();
+
+
+        QrCode::format('png')->size(300)
+            ->generate('http://yoolah.net/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
+
+
+        $msg = "Use the following code to enter the group \n\n Group code: " . $randomcode;
+
+        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.net/viewqr/" . $randomcode;
+
+        $mail = new MailPhp();
+        $mail->sendmail($request->email, $msg);
+        return response()->json([
+            'code' => Response::HTTP_OK, 'message' => "false"
+        ], Response::HTTP_OK);
+
+    }
+
 
     public function mailTo()
     {
