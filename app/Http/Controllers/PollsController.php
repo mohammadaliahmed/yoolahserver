@@ -30,7 +30,7 @@ class PollsController extends Controller
             $poll->roomId = $request->roomId;
             $poll->save();
             return response()->json([
-                'code' => Response::HTTP_OK, 'message' => "false",
+                'code' => Response::HTTP_OK, 'message' => "false", 'pollId' => $poll->id
             ], Response::HTTP_OK);
         }
     }

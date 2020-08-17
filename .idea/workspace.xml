@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="614feda6-60a6-499a-9928-af72ffd8280d" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/qr/9qrcode.png" afterPath="$PROJECT_DIR$/public/qr/9qrcode.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2020_03_17_070847_create_rooms_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_03_17_070847_create_rooms_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/viewroom.blade.php" afterPath="$PROJECT_DIR$/resources/views/viewroom.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PollsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PollsController.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
@@ -122,24 +116,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AppRoomController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-              <folding>
-                <marker date="1597216022012" expanded="true" signature="5875:5977" ph="select * fro... users" />
-                <marker date="1597216022012" expanded="true" signature="5907:5952" ph="select user_... room_users" />
-              </folding>
+            <state relative-caret-position="268">
+              <caret line="55" column="57" lean-forward="false" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewroom.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/viewroom.blade.php">
+      <file leaf-file-name="PollsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PollsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+            <state relative-caret-position="340">
+              <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -149,13 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addUserToRoom</find>
-      <find>mailto</find>
-      <find>mail</find>
-      <find>createroo</find>
-      <find>addUserToRoomWithRoomId</find>
-      <find>getPoll</find>
-      <find>ma</find>
       <find>remove</find>
       <find>-&gt;pluk</find>
       <find>re</find>
@@ -165,7 +149,6 @@
       <find>room_users</find>
       <find>phone</find>
       <find>viewqr</find>
-      <find>login</find>
       <find>viewro</find>
       <find>roomcon</find>
       <find>roomscon</find>
@@ -179,10 +162,22 @@
       <find>verify</find>
       <find>sendmai</find>
       <find>getr</find>
+      <find>addUserToRoom</find>
+      <find>login</find>
+      <find>route</find>
+      <find>ha</find>
+      <find>haskey</find>
+      <find>contains</find>
+      <find>key</find>
+      <find>createPoll</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>C:\xampp\htdocs\yoolah</dir>
+      <dir>C:\xampp\htdocs\yoolah\app\Http\Controllers</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -194,11 +189,8 @@
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/QrCodes.php" />
-        <option value="$PROJECT_DIR$/resources/views/viewqr.blade.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/resources/views/viewuser.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PollsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FileUploadController.php" />
@@ -214,6 +206,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
         <option value="$PROJECT_DIR$/resources/views/viewroom.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/viewqr.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PollsController.php" />
       </list>
     </option>
   </component>
@@ -352,6 +347,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -361,6 +358,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="yoolah" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yoolah" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yoolah" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yoolah" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yoolah" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -388,60 +425,12 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yoolah" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -453,9 +442,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mobilemart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="SearchEverywhereHistoryKey" value="viewro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;appro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;room&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;userc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;userco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;approo&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;viewr&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;regi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/RegisterController.php&#10;messa&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/MessagesController.php&#10;usercon&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;api&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;roomsc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;en&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/.env&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/.env&#10;roomco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;roomsco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;appr&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;phpma&#9;null&#9;null&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;fil&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;messagec&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/MessagesController.php&#10;fi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;viewroom&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;oom&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;roomc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;view&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewqr.blade.php&#10;con&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Constants.php&#10;cons&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Constants.php&#10;filu&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;logi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/LoginController.php&#10;user&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/User.php&#10;regis&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/RegisterController.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/layouts/app.blade.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;layo&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/layout.blade.php&#10;re&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/auth/register.blade.php&#10;fileup&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;roomcon&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;login&#9;null&#9;null&#10;reg&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/auth/register.blade.php&#10;sessiong&#9;null&#9;null&#10;databa&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/config/database.php&#10;pollco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/PollsController.php&#10;viewuser&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewuser.blade.php&#10;viewp&#9;null&#9;null&#10;api.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;ro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;app.p&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/layouts/app.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="pollc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/PollsController.php&#10;api&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/api.php&#10;roomco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;userco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;uplo&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;regi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/RegisterController.php&#10;viewro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;appro&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;room&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;userc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;approo&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;viewr&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;messa&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/MessagesController.php&#10;usercon&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/UserController.php&#10;roomsc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;en&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/.env&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/.env&#10;roomsco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;appr&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/AppRoomController.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/routes/web.php&#10;phpma&#9;null&#9;null&#10;file&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;fil&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;messagec&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/MessagesController.php&#10;fi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;viewroom&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewroom.blade.php&#10;oom&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;roomc&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;view&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewqr.blade.php&#10;con&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Constants.php&#10;cons&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Constants.php&#10;filu&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;logi&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/LoginController.php&#10;user&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/User.php&#10;regis&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/Auth/RegisterController.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/layouts/app.blade.php&#10;layo&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/layout.blade.php&#10;re&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/auth/register.blade.php&#10;fileup&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/FileUploadController.php&#10;roomcon&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/RoomsController.php&#10;login&#9;null&#9;null&#10;reg&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/auth/register.blade.php&#10;sessiong&#9;null&#9;null&#10;databa&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/config/database.php&#10;pollco&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/app/Http/Controllers/PollsController.php&#10;viewuser&#9;FILE&#9;file://C:/xampp/htdocs/yoolah/resources/views/viewuser.blade.php&#10;viewp&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -604,28 +593,34 @@
       <workItem from="1595920674216" duration="603000" />
       <workItem from="1596016341039" duration="5411000" />
       <workItem from="1596035742757" duration="5348000" />
-      <workItem from="1597211874181" duration="4782000" />
+      <workItem from="1597211874181" duration="7594000" />
+      <workItem from="1597227124818" duration="623000" />
+      <workItem from="1597231246888" duration="8000" />
+      <workItem from="1597231279977" duration="931000" />
+      <workItem from="1597243817937" duration="967000" />
+      <workItem from="1597301765242" duration="97000" />
+      <workItem from="1597641829321" duration="225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114007000" />
+    <option name="totallyTimeSpent" value="119670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25416037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27760968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -668,13 +663,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/facade/flare-client-php/src/Api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/mail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -755,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PollsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="80" column="55" lean-forward="true" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -818,13 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_18_080128_create_room_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -860,13 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/viewqr.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_31_131253_create_qr_codes_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -878,13 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FileUploadController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -927,15 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="1025" column="9" lean-forward="false" selection-start-line="1025" selection-start-column="9" selection-end-line="1025" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="31" column="45" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,32 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -1015,10 +940,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/viewroom.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="54" lean-forward="false" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+          <folding>
+            <element signature="e#45#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin-app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="51" lean-forward="false" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" column="29" lean-forward="true" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/viewqr.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FileUploadController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="213" column="44" lean-forward="false" selection-start-line="213" selection-start-column="44" selection-end-line="213" selection-end-column="44" />
           <folding>
             <marker date="1597216022012" expanded="true" signature="5875:5977" ph="select * fro... users" />
             <marker date="1597216022012" expanded="true" signature="5907:5952" ph="select user_... room_users" />
@@ -1026,10 +1005,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/viewroom.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        <state relative-caret-position="17">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="55" column="57" lean-forward="false" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PollsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
           <folding />
         </state>
       </provider>
