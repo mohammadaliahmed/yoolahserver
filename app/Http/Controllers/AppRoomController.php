@@ -102,6 +102,30 @@ class AppRoomController extends Controller
 
     }
 
+    function checkQrStatus(Request $request)
+    {
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+//            $qrCode = QrCodes::find($request->qr_id);
+            $qrCode = DB::table('qr_codes')->where('randomcode', $request->qr_id)->first();
+            if ($qrCode->used == 1) {
+                return response()->json([
+                    'code' => Response::HTTP_FORBIDDEN, 'message' => "Code already Used"
+                ], Response::HTTP_FORBIDDEN);
+            } else {
+                return response()->json([
+                    'code' => Response::HTTP_OK, 'message' => "Available"
+                ], Response::HTTP_OK);
+            }
+
+        }
+
+    }
+
     public
     function addUserToRoomWithRoomId(Request $request)
     {

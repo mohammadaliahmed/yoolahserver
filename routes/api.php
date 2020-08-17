@@ -39,6 +39,7 @@ Route::group(['prefix' => 'room'], function () {
     Route::post('updateCoverUrl', 'AppRoomController@updateCoverUrl');
     Route::post('getRoomInfo', 'AppRoomController@getRoomInfo');
     Route::post('addUserToRoomWithRoomId', 'AppRoomController@addUserToRoomWithRoomId');
+    Route::post('checkQrStatus', 'AppRoomController@checkQrStatus');
     Route::post('removeParticipant', 'AppRoomController@removeParticipant');
     Route::post('addUserToRoom', 'AppRoomController@addUserToRoom');
     Route::post('getRoomDetailsFromID', 'AppRoomController@getRoomDetailsFromID');
