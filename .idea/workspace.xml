@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="614feda6-60a6-499a-9928-af72ffd8280d" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
@@ -119,12 +118,12 @@
       <file leaf-file-name="MessagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MessagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="120" column="30" lean-forward="false" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
+            <state relative-caret-position="523">
+              <caret line="120" column="27" lean-forward="false" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
               <folding>
-                <marker date="1597746270263" expanded="true" signature="2622:2952" ph="select * fro... messages" />
-                <marker date="1597746270263" expanded="true" signature="2710:2755" ph="select room_... room_users" />
-                <marker date="1597746270263" expanded="true" signature="2832:2886" ph="select max(i... messages" />
+                <marker date="1597833376255" expanded="true" signature="2622:2952" ph="select * fro... messages" />
+                <marker date="1597833376255" expanded="true" signature="2710:2755" ph="select room_... room_users" />
+                <marker date="1597833376255" expanded="true" signature="2832:2886" ph="select max(i... messages" />
               </folding>
             </state>
           </provider>
@@ -144,8 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>re</find>
-      <find>register.</find>
       <find>register.b</find>
       <find>register.bl</find>
       <find>room_users</find>
@@ -174,9 +171,12 @@
       <find>sendmail</find>
       <find>adduserto</find>
       <find>adduser</find>
+      <find>desc</find>
+      <find>100</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
+      <replace>200</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs\yoolah</dir>
@@ -641,7 +641,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125134000" />
+    <option name="totallyTimeSpent" value="126563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1001,12 +1001,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MessagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="120" column="30" lean-forward="false" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
+        <state relative-caret-position="523">
+          <caret line="120" column="27" lean-forward="false" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
           <folding>
-            <marker date="1597746270263" expanded="true" signature="2622:2952" ph="select * fro... messages" />
-            <marker date="1597746270263" expanded="true" signature="2710:2755" ph="select room_... room_users" />
-            <marker date="1597746270263" expanded="true" signature="2832:2886" ph="select max(i... messages" />
+            <marker date="1597833376255" expanded="true" signature="2622:2952" ph="select * fro... messages" />
+            <marker date="1597833376255" expanded="true" signature="2710:2755" ph="select room_... room_users" />
+            <marker date="1597833376255" expanded="true" signature="2832:2886" ph="select max(i... messages" />
           </folding>
         </state>
       </provider>

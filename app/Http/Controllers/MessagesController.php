@@ -47,7 +47,7 @@ class MessagesController extends Controller
 //                "New Message from " . $request->messageByName,
 //                $message->messageText, $request->roomId);
             $messages = DB::table('messages')->where('roomId', $request->roomId)->
-            orderBy('id', 'asc')->take(100)->get();
+            orderBy('id', 'desc')->take(100)->get();
 
             return response()->json([
                 'code' => Response::HTTP_OK, 'message' => "false", 'messages' => $messages
@@ -68,7 +68,7 @@ class MessagesController extends Controller
             $results = DB::select("select * from messages s where `roomId` in
                                             (select room_id from room_users where user_id=" . $request->id . ")
                                             and  `id`=(select max(id) from messages p where p.roomId=s.roomId )
-                                            ORDER by s.time asc ");
+                                            ORDER by s.time desc ");
 
             foreach ($results as $item) {
                 $chatRoom = Rooms::find($item->roomId);
@@ -95,7 +95,7 @@ class MessagesController extends Controller
         } else {
 
             $messages = DB::table('messages')->where('roomId', $request->roomId)->
-            orderBy('id', 'asc')->take(100)->get();
+            orderBy('id', 'desc')->take(100)->get();
 
             return response()->json([
                 'code' => Response::HTTP_OK, 'message' => "false",
@@ -118,7 +118,7 @@ class MessagesController extends Controller
                 ->where('id', $request->id)
                 ->update(['messageType' => 'DELETED']);
             $messages = DB::table('messages')->where('roomId', $request->roomId)->
-            orderBy('id', 'asc')->take(100)->get();
+            orderBy('id', 'desc')->take(100)->get();
 
             return response()->json([
                 'code' => Response::HTTP_OK, 'message' => "false",
