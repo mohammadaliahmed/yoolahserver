@@ -93,8 +93,9 @@ class AppRoomController extends Controller
                     $roomUser->can_message = 0;
                     $roomUser->save();
                 }
+                $room = Rooms::find($qrCode->room_id);
                 return response()->json([
-                    'code' => Response::HTTP_OK, 'message' => "false", 'roomId' => $qrCode->room_id
+                    'code' => Response::HTTP_OK, 'message' => "false", 'roomId' => $qrCode->room_id, 'room' => $room
                 ], Response::HTTP_OK);
             }
 

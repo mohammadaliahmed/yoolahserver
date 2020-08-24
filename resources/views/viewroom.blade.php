@@ -11,20 +11,15 @@
 
 
                         <div class="container">
-                            <div class="row">
-                                <div class="col-sm">
-                                </div>
-                                <div class="col-sm">
 
-                                    {{--<img width="250px" src="../public/qr/{{$room->qr_code}}">--}}
-                                    <h2>Group Name: {{$room->title}}</h2>
-                                    <br>
-                                    <h4>Admin Id to login: {{$admin->randomcode}}</h4>
-                                </div>
+                            <div class="text-center">
 
-                                <div class="col-sm">
 
-                                </div>
+                                {{--<img width="250px" src="../public/qr/{{$room->qr_code}}">--}}
+                                <h2>Room Name: {{$room->title}}</h2>
+                                <br>
+                                <h4>Admin Id to login: {{$admin->randomcode}}</h4>
+
                             </div>
                         </div>
 
@@ -32,47 +27,7 @@
                     </div>
                 </div>
                 <br>
-                <br>
 
-                <div class="card">
-                    <div class="card-header">Add User</div>
-
-
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('sendmail', $room->id)}}">
-                            @csrf
-                            <div class="form-group row">
-                                <label for="name"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="name" type="text"
-                                           class="form-control @error('Email') is-invalid @enderror" name="email"
-                                           value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                    @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                    <br>
-                                    <button type="submit" class="btn btn-primary">Send email</button>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-
-                            </div>
-                        </form>
-
-
-                    </div>
-
-                </div>
-
-                <br>
-                <br>
 
                 <div class="card">
                     <div class="card-header">Participants {{sizeof($members).'/'.$room->members}}</div>
@@ -94,13 +49,13 @@
                                         style="width: 178px;">Name
                                     </th>
                                     {{--<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"--}}
-                                        {{--aria-label="Products: activate to sort column ascending" style="width: 100px;">--}}
-                                        {{--Email--}}
+                                    {{--aria-label="Products: activate to sort column ascending" style="width: 100px;">--}}
+                                    {{--Email--}}
                                     {{--</th>--}}
                                     {{--<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"--}}
-                                        {{--aria-label="Payment Type: activate to sort column ascending"--}}
-                                        {{--style="width: 100px;">--}}
-                                        {{--Phone--}}
+                                    {{--aria-label="Payment Type: activate to sort column ascending"--}}
+                                    {{--style="width: 100px;">--}}
+                                    {{--Phone--}}
                                     {{--</th>--}}
 
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
@@ -156,6 +111,47 @@
                             </table>
                         </div>
                     </div>
+                </div>
+
+
+                <br>
+                <div class="card">
+                    <div class="card-header">Add User</div>
+
+
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('sendmail', $room->id)}}">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="name"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text"
+                                           class="form-control @error('Email') is-invalid @enderror" name="email"
+                                           value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                    @error('title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                    <br>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Send email</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+
+                            </div>
+                        </form>
+
+
+                    </div>
+
                 </div>
             </div>
         </div>

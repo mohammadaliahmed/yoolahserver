@@ -25,8 +25,8 @@ Route::get('/admin', 'AdminController@admin')->name('admin');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/create', 'RoomsController@create')->name('create');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'RoomsController@create')->name('create');
 Route::get('/viewroom/{id}', 'RoomsController@viewroom')->name('viewroom');
 Route::get('/viewUserProfile/{id}', 'UserController@viewUserProfile')->name('viewUserProfile');
 Route::get('/removeUserFromGroup/{roomId}/{userId}', 'RoomsController@removeUserFromGroup')->name('removeUserFromGroup');

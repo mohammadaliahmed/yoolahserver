@@ -11,33 +11,19 @@
 
 
                         <div class="container">
-                            <div class="row">
-                                <div class="col-sm">
-                                </div>
-                                <div class="col-sm">
+                            <div class="text-center">
 
-                                    <img width="300px" height="300px" class="rounded-circle"
-                                         src="../public/images/{{$user->thumbnailUrl}}">
-
-                                    <h4>Name: {{$user->name}} </h4>
-                                    <h4>Email: {{$user->email}} </h4>
-                                    <h4>Phone:{{$user->phone}} </h4>
-                                </div>
-                                <div class="col-sm">
-
-
-                                </div>
+                                <img width="300px" height="300px" class="rounded-circle"
+                                     src="../public/images/{{$user->thumbnailUrl}}">
+                                <br>
+                                <br>
+                                <h4>Name: {{$user->name}} </h4>
+                                <h4>Joined: {{$user->created_at}} </h4>
                             </div>
                         </div>
 
-
                     </div>
                 </div>
-                <br>
-                <br>
-
             </div>
-        </div>
-    </div>
 
 @endsection

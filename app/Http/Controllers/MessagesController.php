@@ -46,11 +46,11 @@ class MessagesController extends Controller
 //            $this->sendPushNotification($user->fcmKey,
 //                "New Message from " . $request->messageByName,
 //                $message->messageText, $request->roomId);
-            $messages = DB::table('messages')->where('roomId', $request->roomId)->
-            orderBy('id', 'desc')->take(100)->get();
+//            $messages = DB::table('messages')->where('roomId', $request->roomId)->
+//            orderBy('id', 'desc')->take(100)->get();
 
             return response()->json([
-                'code' => Response::HTTP_OK, 'message' => "false", 'messages' => $messages
+                'code' => Response::HTTP_OK, 'message' => "false", 'messageModel' => $message
 
                 ,
             ], Response::HTTP_OK);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Constants;
 use App\Rooms;
 use App\User;
+use function array_push;
 use function contains;
 use function hasKey;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use function in_array;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class UserController extends Controller
@@ -86,8 +88,19 @@ class UserController extends Controller
                 ->first();
 
             if ($user != null) {
+                $roomusers = DB::table('room_users')->where('user_id', $user->id)->get();
+                $rooms = array();
+                $names=array();
+                foreach ($roomusers as $roomuser) {
+                    $room = Rooms::find($roomuser->room_id);
+                    if(!in_array($roomuser->room_id,$names)){
+                        array_push($names,$roomuser->room_id);
+                        array_push($rooms, $room);
+
+                    }
+                }
                 return response()->json([
-                    'code' => 200, 'message' => 'false', 'user' => $user
+                    'code' => 200, 'message' => 'false', 'user' => $user,'rooms'=> $rooms
                 ], Response::HTTP_OK);
             } else {
                 return response()->json([
