@@ -52,6 +52,8 @@ Route::group(['prefix' => 'message'], function () {
     Route::post('deleteMessageFroAll', 'MessagesController@deleteMessageFroAll');
     Route::post('allRoomMessages', 'MessagesController@allRoomMessages');
     Route::post('userMessages', 'MessagesController@userMessages');
+    Route::post('getReadMessages', 'MessagesController@getReadMessages');
+    Route::post('markAsReadOnServer', 'MessagesController@markAsReadOnServer');
 });
 Route::group(['prefix' => 'poll'], function () {
 

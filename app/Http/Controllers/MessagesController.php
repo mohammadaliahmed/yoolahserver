@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Constants;
+use App\MessageReads;
 use App\Messages;
 use App\Rooms;
+use App\User;
+use function array_push;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use function sizeof;
 
 class MessagesController extends Controller
 {
@@ -100,6 +104,61 @@ class MessagesController extends Controller
             return response()->json([
                 'code' => Response::HTTP_OK, 'message' => "false",
                 'messages' => $messages
+
+                ,
+            ], Response::HTTP_OK);
+        }
+    }
+
+    public function markAsReadOnServer(Request $request)
+    {
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+            $read = DB::table('message_reads')
+                ->where('message_id', $request->messageId)
+                ->get();
+//
+            if (sizeof($read) > 0) {
+            } else {
+                $messageRead = new MessageReads();
+                $messageRead->user_id = $request->userId;
+                $messageRead->room_id = $request->roomId;
+                $messageRead->message_id = $request->messageId;
+                $messageRead->save();
+            }
+            return response()->json([
+                'code' => Response::HTTP_OK, 'message' => "false"
+
+                ,
+            ], Response::HTTP_OK);
+        }
+    }
+
+    public function getReadMessages(Request $request)
+    {
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+            $message = Messages::find($request->messageId);
+            $reads = DB::table('message_reads')
+                ->where('message_id',$request->messageId)
+                ->where('room_id',$request->roomId)
+                ->get();
+            $users = array();
+//            return $reads;
+            foreach ($reads as $read) {
+                $user=User::find($read->user_id);
+                array_push($users,$user);
+            }
+            return response()->json([
+                'code' => Response::HTTP_OK, 'message' => "false", 'users' => $users, 'messageObject' => $message
 
                 ,
             ], Response::HTTP_OK);
