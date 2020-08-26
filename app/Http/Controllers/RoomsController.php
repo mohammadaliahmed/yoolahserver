@@ -89,6 +89,7 @@ class RoomsController extends Controller
         $qrcode->room_id=$room->id ;
         $qrcode->used=0;
         $qrcode->randomCode=$roomCode;
+        $qrcode->save();
 
 //        return redirect()->back()->with('message', 'Room Created');
 //        return view('viewroom')->with('room', $room->id);
