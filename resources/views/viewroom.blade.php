@@ -18,6 +18,8 @@
                                 {{--<img width="250px" src="../public/qr/{{$room->qr_code}}">--}}
                                 <h2>Room Name: {{$room->title}}</h2>
                                 <br>
+                                <h4>Room Code: {{$room->roomCode}}</h4>
+                                <br>
                                 <h4>Admin Id to login: {{$admin->randomcode}}</h4>
 
                             </div>
