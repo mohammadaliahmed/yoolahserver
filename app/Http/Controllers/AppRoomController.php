@@ -7,6 +7,7 @@ use App\MailPhp;
 use App\QrCodes;
 use App\Rooms;
 use App\RoomUsers;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -58,6 +59,70 @@ class AppRoomController extends Controller
                     return response()->json([
                         'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
                     ], Response::HTTP_OK);
+                }
+            }
+        }
+    }
+
+    public function addAdminToOldGroups(Request $request)
+    {
+
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+//
+
+            $room = DB::table('rooms')->where('roomcode', $request->code)->first();
+            if ($room != null) {
+                if ($room->userid != $request->userId) {
+
+
+                    $room = Rooms::find($room->id);
+                    $newuser = User::find($room->userid);
+                    $user = $newuser;
+                    $newuser->delete();
+
+                    $oldUser = User::find($request->userId);
+                    $oldUser->update(['password' => $user->password,
+                        'email' => $user->email, 'name' => $user->name]);
+
+
+                    $room->update(['userid' => $request->userId]);
+                    $roomUser = DB::table('room_users')->where('room_id', $room->id)
+                        ->where('can_message', 1)->limit(1);
+                    if ($roomUser != null) {
+                        $roomUser->update(['user_id' => $request->userId]);
+                    }
+
+
+                }
+                return response()->json([
+                    'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
+                ], Response::HTTP_OK);
+
+            } else {
+                $qr_code = DB::table("qr_codes")->where("randomcode", $request->code)->first();
+
+
+                if (!$qr_code) {
+                    return response()->json([
+                        'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
+                    ], Response::HTTP_NOT_FOUND);
+                } else {
+                    $room = Rooms::find($qr_code->room_id);
+                    if ($qr_code == null) {
+                        return response()->json([
+                            'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
+                        ], Response::HTTP_NOT_FOUND);
+                    } else {
+
+
+                        return response()->json([
+                            'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
+                        ], Response::HTTP_OK);
+                    }
                 }
             }
         }

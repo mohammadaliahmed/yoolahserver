@@ -41,6 +41,7 @@ Route::group(['prefix' => 'room'], function () {
     Route::post('addUserToRoomWithRoomId', 'AppRoomController@addUserToRoomWithRoomId');
     Route::post('checkQrStatus', 'AppRoomController@checkQrStatus');
     Route::post('removeParticipant', 'AppRoomController@removeParticipant');
+    Route::post('addAdminToOldGroups', 'AppRoomController@addAdminToOldGroups');
     Route::post('addUserToRoom', 'AppRoomController@addUserToRoom');
     Route::post('getRoomDetailsFromID', 'AppRoomController@getRoomDetailsFromID');
     Route::post('inviteUserFromApp', 'AppRoomController@inviteUserFromApp');
