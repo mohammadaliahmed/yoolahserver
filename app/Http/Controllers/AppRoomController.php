@@ -40,25 +40,35 @@ class AppRoomController extends Controller
                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
             ], Response::HTTP_OK);
         } else {
-            $qr_code = DB::table("qr_codes")->where("randomcode", $request->code)->first();
 
-//            $room = DB::table('rooms')->where('roomcode', $request->code)->first();
-            if (!$qr_code) {
+            $room = DB::table('rooms')->where('roomcode', $request->code)->first();
+            if ($room != null) {
+                $room = Rooms::find($room->id);
+                $user = User::find($room->userid);
                 return response()->json([
-                    'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
-                ], Response::HTTP_NOT_FOUND);
+                    'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room, 'user' => $user
+                ], Response::HTTP_OK);
             } else {
-                $room = Rooms::find($qr_code->room_id);
-                if ($qr_code == null) {
+                $qr_code = DB::table("qr_codes")->where("randomcode", $request->code)->first();
+
+
+                if (!$qr_code) {
                     return response()->json([
                         'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
                     ], Response::HTTP_NOT_FOUND);
                 } else {
+                    $room = Rooms::find($qr_code->room_id);
+                    if ($qr_code == null) {
+                        return response()->json([
+                            'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
+                        ], Response::HTTP_NOT_FOUND);
+                    } else {
 
 
-                    return response()->json([
-                        'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
-                    ], Response::HTTP_OK);
+                        return response()->json([
+                            'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
+                        ], Response::HTTP_OK);
+                    }
                 }
             }
         }
@@ -201,6 +211,7 @@ class AppRoomController extends Controller
             ], Response::HTTP_OK);
         } else {
 
+            $room = Rooms::find($request->room_id);
 
             $roomUser = DB::table('room_users')->where('room_id', $request->room_id)
                 ->where('user_id', $request->user_id)->first();
@@ -214,7 +225,7 @@ class AppRoomController extends Controller
                 $roomUser->save();
             }
             return response()->json([
-                'code' => Response::HTTP_OK, 'message' => "false", 'roomId' => $request->room_id
+                'code' => Response::HTTP_OK, 'message' => "false", 'roomId' => $request->room_id, 'room' => $room
             ], Response::HTTP_OK);
 
         }

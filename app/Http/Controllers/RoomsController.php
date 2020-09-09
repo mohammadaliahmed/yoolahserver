@@ -26,13 +26,13 @@ class RoomsController extends Controller
     public function create()
     {
         $userId = Auth::id();
-
+        $user=User::find($userId);
         $rooms = DB::table('rooms')->where('userid', $userId)->get();
         foreach ($rooms as $room) {
             $members = DB::select("Select * from users where id IN(Select user_id from room_users where room_id=" . $room->id . ")");
             $room->memeberSize = sizeof($members);
         }
-        return view('createroom')->with('rooms', $rooms);
+        return view('createroom')->with('rooms', $rooms)->with('user', $user);
 
 
     }
@@ -84,12 +84,12 @@ class RoomsController extends Controller
         $message->time = $milliseconds;
         $message->save();
 
-        $qrcode=new QrCodes();
-        $qrcode->qr_url=$room->id . 'qrcode.png';
-        $qrcode->room_id=$room->id ;
-        $qrcode->used=0;
-        $qrcode->randomCode=$roomCode;
-        $qrcode->save();
+//        $qrcode=new QrCodes();
+//        $qrcode->qr_url=$room->id . 'qrcode.png';
+//        $qrcode->room_id=$room->id ;
+//        $qrcode->used=0;
+//        $qrcode->randomCode=$roomCode;
+//        $qrcode->save();
 
 //        return redirect()->back()->with('message', 'Room Created');
 //        return view('viewroom')->with('room', $room->id);
