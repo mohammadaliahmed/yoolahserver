@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="614feda6-60a6-499a-9928-af72ffd8280d" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Constants.php" afterPath="$PROJECT_DIR$/app/Constants.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/createroom.blade.php" afterPath="$PROJECT_DIR$/resources/views/createroom.blade.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
@@ -118,31 +114,15 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="AppRoomController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="226" column="37" lean-forward="true" selection-start-line="226" selection-start-column="37" selection-end-line="226" selection-end-column="37" />
+            <state relative-caret-position="-154">
+              <caret line="140" column="26" lean-forward="false" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="26" />
               <folding>
                 <marker date="1599634474997" expanded="true" signature="9843:9945" ph="select * fro... users" />
                 <marker date="1599634474997" expanded="true" signature="9875:9920" ph="select user_... room_users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoomsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="81" column="42" lean-forward="true" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
-              <folding>
-                <marker date="1599631674537" expanded="true" signature="771:866" ph="Select * fro... users" />
-                <marker date="1599631674537" expanded="true" signature="803:848" ph="Select user_... room_users" />
-                <marker date="1599631674537" expanded="true" signature="2993:3166" ph="SELECT * FRO... users" />
-                <marker date="1599631674537" expanded="true" signature="2993:3246" ph="SELECT * FRO... users" />
-                <marker date="1599631674537" expanded="true" signature="3616:3869" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -170,7 +150,6 @@
       <find>asc</find>
       <find>createMessage</find>
       <find>loginWithId</find>
-      <find>addUserToRoom</find>
       <find>br</find>
       <find>br&gt;</find>
       <find>admin</find>
@@ -182,6 +161,7 @@
       <find>update(</find>
       <find>getRoomDetailsFromID</find>
       <find>addUserToRoomWithRoomId</find>
+      <find>addUserToRoom</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -372,8 +352,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -416,6 +394,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -590,18 +570,19 @@
       <workItem from="1598506763234" duration="833000" />
       <workItem from="1598943984605" duration="9191000" />
       <workItem from="1599560091985" duration="1363000" />
-      <workItem from="1599630847749" duration="2345000" />
+      <workItem from="1599630847749" duration="3213000" />
+      <workItem from="1599720831479" duration="81000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160535000" />
+    <option name="totallyTimeSpent" value="161484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24130106" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -954,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="34" column="15" lean-forward="false" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,10 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="171" column="22" lean-forward="true" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
-          <folding>
-            <element signature="e#353#5274#0#HTML" expanded="false" />
-            <element signature="e#5291#9029#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -985,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="226" column="37" lean-forward="true" selection-start-line="226" selection-start-column="37" selection-end-line="226" selection-end-column="37" />
+        <state relative-caret-position="-154">
+          <caret line="140" column="26" lean-forward="false" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="26" />
           <folding>
             <marker date="1599634474997" expanded="true" signature="9843:9945" ph="select * fro... users" />
             <marker date="1599634474997" expanded="true" signature="9875:9920" ph="select user_... room_users" />

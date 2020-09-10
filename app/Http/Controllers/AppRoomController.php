@@ -221,7 +221,7 @@ class AppRoomController extends Controller
                 $roomUser = new RoomUsers();
                 $roomUser->room_id = $request->room_id;
                 $roomUser->user_id = $request->user_id;
-                $roomUser->can_message = 1;
+                $roomUser->can_message = 0;
                 $roomUser->save();
             }
             return response()->json([
