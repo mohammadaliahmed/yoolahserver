@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="614feda6-60a6-499a-9928-af72ffd8280d" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
@@ -119,11 +119,11 @@
       <file leaf-file-name="AppRoomController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="225" column="13" lean-forward="true" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
+            <state relative-caret-position="254">
+              <caret line="223" column="42" lean-forward="false" selection-start-line="223" selection-start-column="42" selection-end-line="223" selection-end-column="42" />
               <folding>
-                <marker date="1599720953918" expanded="true" signature="9843:9945" ph="select * fro... users" />
-                <marker date="1599720953918" expanded="true" signature="9875:9920" ph="select user_... room_users" />
+                <marker date="1599722008724" expanded="true" signature="9843:9945" ph="select * fro... users" />
+                <marker date="1599722008724" expanded="true" signature="9875:9920" ph="select user_... room_users" />
               </folding>
             </state>
           </provider>
@@ -572,12 +572,12 @@
       <workItem from="1598943984605" duration="9191000" />
       <workItem from="1599560091985" duration="1363000" />
       <workItem from="1599630847749" duration="3213000" />
-      <workItem from="1599720831479" duration="570000" />
+      <workItem from="1599720831479" duration="1175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161973000" />
+    <option name="totallyTimeSpent" value="162578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -956,11 +956,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="225" column="13" lean-forward="true" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
+        <state relative-caret-position="254">
+          <caret line="223" column="42" lean-forward="false" selection-start-line="223" selection-start-column="42" selection-end-line="223" selection-end-column="42" />
           <folding>
-            <marker date="1599720953918" expanded="true" signature="9843:9945" ph="select * fro... users" />
-            <marker date="1599720953918" expanded="true" signature="9875:9920" ph="select user_... room_users" />
+            <marker date="1599722008724" expanded="true" signature="9843:9945" ph="select * fro... users" />
+            <marker date="1599722008724" expanded="true" signature="9875:9920" ph="select user_... room_users" />
           </folding>
         </state>
       </provider>
