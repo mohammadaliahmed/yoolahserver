@@ -96,7 +96,7 @@ class AppRoomController extends Controller
 
                     $oldUser = User::find($request->userId);
                     $oldUser->update(['password' => $user->password,
-                        'email' => $user->email, 'name' => $user->name]);
+                        'email' => $user->email, 'name' => $user->name, 'email_verified' => 1]);
 
 
                     $room->update(['userid' => $request->userId]);
