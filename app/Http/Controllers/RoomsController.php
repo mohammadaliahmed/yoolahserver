@@ -84,12 +84,12 @@ class RoomsController extends Controller
         $message->time = $milliseconds;
         $message->save();
 
-//        $qrcode=new QrCodes();
-//        $qrcode->qr_url=$room->id . 'qrcode.png';
-//        $qrcode->room_id=$room->id ;
-//        $qrcode->used=0;
-//        $qrcode->randomCode=$roomCode;
-//        $qrcode->save();
+        $qrcode=new QrCodes();
+        $qrcode->qr_url=$room->id . 'qrcode.png';
+        $qrcode->room_id=$room->id ;
+        $qrcode->used=0;
+        $qrcode->randomCode=$roomCode;
+        $qrcode->save();
 
 //        return redirect()->back()->with('message', 'Room Created');
 //        return view('viewroom')->with('room', $room->id);
