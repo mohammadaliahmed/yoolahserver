@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('time');
             $table->string('fcmKey')->nullable();
             $table->boolean('email_verified');
-            $table->boolean('randomcode');
+            $table->integer('randomcode');
             $table->string('phone')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -62,7 +62,7 @@ class RoomsController extends Controller
         $user = User::find($userId);
 
         QrCode::format('png')->size(300)
-            ->generate('http://yoolah.net/mainRoom/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
+            ->generate('http://yoolah.com/mainRoom/' . $room->id, public_path('qr/' . $room->id . 'qrcode.png'));
 
         $roomm = Rooms::find($room->id);
         $roomm->qr_code = $room->id . 'qrcode.png';
@@ -166,7 +166,7 @@ class RoomsController extends Controller
 
         $qrLink = 'qr/' . $milliseconds . 'qrcode.png';
         QrCode::format('png')->size(300)
-            ->generate('http://yoolah.net/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
+            ->generate('http://yoolah.com/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
 
         $room = Rooms::find($id);
 

@@ -54,13 +54,13 @@ class AppRoomController extends Controller
 
                 if (!$qr_code) {
                     return response()->json([
-                        'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
+                        'code' => Response::HTTP_NOT_FOUND, 'message' => "Wrong code"
                     ], Response::HTTP_NOT_FOUND);
                 } else {
                     $room = Rooms::find($qr_code->room_id);
                     if ($qr_code == null) {
                         return response()->json([
-                            'code' => Response::HTTP_NOT_FOUND, 'message' => "false"
+                            'code' => Response::HTTP_NOT_FOUND, 'message' => "Wrong code"
                         ], Response::HTTP_NOT_FOUND);
                     } else {
 
@@ -320,12 +320,12 @@ class AppRoomController extends Controller
 
 
         QrCode::format('png')->size(300)
-            ->generate('http://yoolah.net/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
+            ->generate('http://yoolah.com/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
 
 
         $msg = "Use the following code to enter the group \n\n Group code: " . $randomcode;
 
-        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.net/viewqr/" . $randomcode;
+        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.com/viewqr/" . $randomcode;
 
         $mail = new MailPhp();
         $mail->sendmail($request->email, $msg);

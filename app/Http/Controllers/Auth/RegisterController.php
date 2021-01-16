@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -78,11 +79,17 @@ class RegisterController extends Controller
 
 //            'password' => md5($data['password']),
         ]);;
-        $data = "Please click on the following link to verify your email\nhttp://yoolah.net/verify/" . $roomCode;
+        $data = "Please click on the following link to verify your email\nhttp://yoolah.com/verify/" . $roomCode;
 
 
-        $mail = new MailPhp();
-        $mail->sendmail($ema, $data);
+        $subject = "Email Verification";
+
+        Mail::send('verifyemail', ['roomCode'=> $roomCode,'subject'=>$subject], function ($message) use ( $subject,$ema) {
+            $message->from('noreply@yoolah.com', 'Yoolah');
+            $message->subject($subject);
+            $message->to($ema);
+        });
+
 
         return $user;
 
