@@ -26,7 +26,7 @@ class RoomsController extends Controller
     public function create()
     {
         $userId = Auth::id();
-        $user=User::find($userId);
+        $user = User::find($userId);
         $rooms = DB::table('rooms')->where('userid', $userId)->get();
         foreach ($rooms as $room) {
             $members = DB::select("Select * from users where id IN(Select user_id from room_users where room_id=" . $room->id . ")");
@@ -84,11 +84,11 @@ class RoomsController extends Controller
         $message->time = $milliseconds;
         $message->save();
 
-        $qrcode=new QrCodes();
-        $qrcode->qr_url=$room->id . 'qrcode.png';
-        $qrcode->room_id=$room->id ;
-        $qrcode->used=0;
-        $qrcode->randomCode=$roomCode;
+        $qrcode = new QrCodes();
+        $qrcode->qr_url = $room->id . 'qrcode.png';
+        $qrcode->room_id = $room->id;
+        $qrcode->used = 0;
+        $qrcode->randomCode = $roomCode;
         $qrcode->save();
 
 //        return redirect()->back()->with('message', 'Room Created');
@@ -164,18 +164,21 @@ class RoomsController extends Controller
         $qrCode->randomcode = $randomcode;
         $qrCode->save();
 
+        $qrLink = 'qr/' . $milliseconds . 'qrcode.png';
         QrCode::format('png')->size(300)
             ->generate('http://yoolah.net/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
 
         $room = Rooms::find($id);
 
 
-        $msg = "Use the following code to enter the group \n\n Group code: " . $randomcode;
+        $subject = "Invited to join a group";
 
-        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.net/viewqr/" . $randomcode;
+        Mail::send('testmail', ['groupcode' => $randomcode, 'subject' => $subject, 'qrlink' => $qrLink], function ($message) use ($request, $subject) {
+            $message->from('noreply@yoolah.com', 'Yoolah');
+            $message->subject($subject);
+            $message->to($request['email']);
+        });
 
-        $mail = new MailPhp();
-        $mail->sendmail($request['email'], $msg);
         return redirect()->back()->with('message', 'Mail Sent');
 
 
@@ -183,7 +186,7 @@ class RoomsController extends Controller
 
     public function mailTo()
     {
-        Mail::send('testmail', [], function ($message)  {
+        Mail::send('testmail', [], function ($message) {
             $message->from('noreply@yoolah.com', 'Yoolah');
             $message->subject('New Ticket Created');
             $message->to('m.aliahmed0@gmail.com');
