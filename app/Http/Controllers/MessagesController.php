@@ -30,6 +30,7 @@ class MessagesController extends Controller
             $message->messageType = $request->messageType;
             $message->messageByName = $request->messageByName;
             $message->imageUrl = $request->imageUrl;
+            $message->oldId = $request->oldId;
             $message->audioUrl = $request->audioUrl;
             $message->mediaTime = $request->mediaTime;
             $message->filename = $request->filename;

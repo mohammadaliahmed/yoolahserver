@@ -183,7 +183,11 @@ class RoomsController extends Controller
 
     public function mailTo()
     {
-
+        Mail::send('testmail', [], function ($message)  {
+            $message->from('noreply@yoolah.com', 'Yoolah');
+            $message->subject('New Ticket Created');
+            $message->to('m.aliahmed0@gmail.com');
+        });
 
     }
 
