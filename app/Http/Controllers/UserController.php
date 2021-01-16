@@ -261,14 +261,20 @@ class UserController extends Controller
     {
 
 
-        $data = [
-            'data' => "http://chatapp.com/sdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfsdfsdfs",
+//        $data = [
+//            'data' => "http://chatapp.com/sdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfsdfsdfs",
+//
+//        ];
+//        $email = "m.aliahmed000@gmail.com";
+//        Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
+//            $message->to($email)->subject("New yoolah User  Registration");
+//            $message->from('chat@gmail.com', 'Chat App');
+//        });
 
-        ];
-        $email = "m.aliahmed000@gmail.com";
-        Mail::send('mail', ["data1" => $data], function ($message) use ($email) {
-            $message->to($email)->subject("New yoolah User  Registration");
-            $message->from('chat@gmail.com', 'Chat App');
+        Mail::send('testmail', [], function ($message)  {
+            $message->from('noreply@yoolah.com', 'Yoolah');
+            $message->subject('New Ticket Created');
+            $message->to('m.aliahmed0@gmail.com');
         });
 
     }

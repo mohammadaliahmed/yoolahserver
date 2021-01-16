@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -16,8 +17,13 @@ class MailController extends Controller
 
     public function sendMail()
     {
+        Mail::send('testmail', [], function ($message)  {
+            $message->from('noreply@yoolah.com', 'Yoolah');
+            $message->subject('New Ticket Created');
+            $message->to('m.aliahmed0@gmail.com');
+        });
 
-        mail("m.aliahmed0@gmail.com","My subject",'sdfsdfs');
+//        mail("m.aliahmed0@gmail.com","My subject",'sdfsdfs');
 
 //        $mail = new PHPMailer();
 //        $mail->IsSMTP();
