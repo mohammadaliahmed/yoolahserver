@@ -59,7 +59,7 @@
                                             <br>
 
                                             <center>
-                                                <img src="http://yoolah.com/public/qr{{$qrlink}}" width="300">
+                                                <img src="http://yoolah.com/public/{{$qrlink}}" width="300">
                                             </center>
                                         </tr>
                                     </table>
