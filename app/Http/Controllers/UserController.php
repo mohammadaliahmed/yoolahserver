@@ -89,16 +89,10 @@ class UserController extends Controller
                 ->first();
 
             if ($user != null) {
-                $roomusers = DB::table('room_users')->where('user_id', $user->id)->get();
-                $rooms = array();
-                $names = array();
-                foreach ($roomusers as $roomuser) {
-                    $room = Rooms::find($roomuser->room_id);
-                    if (!in_array($roomuser->room_id, $names)) {
-                        array_push($names, $roomuser->room_id);
-                        array_push($rooms, $room);
-
-                    }
+                $rooms=array();
+                $roomUser=DB::table('room_users')->where('user_id',$request->id)->get();
+                foreach ($roomUser as $roomId){
+                    array_push($rooms,Rooms::find($roomId->room_id));
                 }
                 return response()->json([
                     'code' => 200, 'message' => 'false', 'user' => $user, 'rooms' => $rooms

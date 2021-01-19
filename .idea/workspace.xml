@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
@@ -136,11 +135,11 @@
       <file leaf-file-name="AppRoomController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="360" column="48" lean-forward="true" selection-start-line="360" selection-start-column="48" selection-end-line="360" selection-end-column="48" />
+            <state relative-caret-position="102">
+              <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="38" />
               <folding>
-                <marker date="1611036905793" expanded="true" signature="11631:11733" ph="select * fro... users" />
-                <marker date="1611036905793" expanded="true" signature="11663:11708" ph="select user_... room_users" />
+                <marker date="1611038992722" expanded="true" signature="11804:11906" ph="select * fro... users" />
+                <marker date="1611038992722" expanded="true" signature="11836:11881" ph="select user_... room_users" />
               </folding>
             </state>
           </provider>
@@ -149,8 +148,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="150" column="41" lean-forward="true" selection-start-line="150" selection-start-column="41" selection-end-line="150" selection-end-column="41" />
+            <state relative-caret-position="-2803">
+              <caret line="90" column="32" lean-forward="true" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -596,12 +595,12 @@
       <workItem from="1610685076574" duration="1859000" />
       <workItem from="1610781021413" duration="11572000" />
       <workItem from="1610809594178" duration="3389000" />
-      <workItem from="1611031914482" duration="3196000" />
+      <workItem from="1611031914482" duration="4251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191191000" />
+    <option name="totallyTimeSpent" value="192246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -974,8 +973,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="150" column="41" lean-forward="true" selection-start-line="150" selection-start-column="41" selection-end-line="150" selection-end-column="41" />
+        <state relative-caret-position="-2803">
+          <caret line="90" column="32" lean-forward="true" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -995,11 +994,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="360" column="48" lean-forward="true" selection-start-line="360" selection-start-column="48" selection-end-line="360" selection-end-column="48" />
+        <state relative-caret-position="102">
+          <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="38" />
           <folding>
-            <marker date="1611036905793" expanded="true" signature="11631:11733" ph="select * fro... users" />
-            <marker date="1611036905793" expanded="true" signature="11663:11708" ph="select user_... room_users" />
+            <marker date="1611038992722" expanded="true" signature="11804:11906" ph="select * fro... users" />
+            <marker date="1611038992722" expanded="true" signature="11836:11881" ph="select user_... room_users" />
           </folding>
         </state>
       </provider>

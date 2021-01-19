@@ -85,7 +85,11 @@ class AppRoomController extends Controller
 
             $room = DB::table('rooms')->where('roomcode', $request->code)->first();
             if ($room != null) {
-                $rooms = DB::table('rooms')->where('userid', $room->userid)->get();
+                $rooms=array();
+                $roomUser=DB::table('room_users')->where('user_id',$request->id)->get();
+                foreach ($roomUser as $roomId){
+                    array_push($rooms,Rooms::find($roomId->room_id));
+                }
                 $user = User::find($room->userid);
                 return response()->json([
                     'code' => Response::HTTP_OK, 'message' => "false", 'rooms' => $rooms, 'user' => $user
