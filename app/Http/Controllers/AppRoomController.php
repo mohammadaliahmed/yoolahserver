@@ -74,6 +74,49 @@ class AppRoomController extends Controller
         }
     }
 
+    public function getFirstTimeGroups(Request $request)
+    {
+
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+            $room = DB::table('rooms')->where('roomcode', $request->code)->first();
+            if ($room != null) {
+                $rooms = DB::table('rooms')->where('userid', $room->userid)->get();
+                $user = User::find($room->userid);
+                return response()->json([
+                    'code' => Response::HTTP_OK, 'message' => "false", 'rooms' => $rooms, 'user' => $user
+                ], Response::HTTP_OK);
+            } else {
+
+                $qr_code = DB::table("qr_codes")->where("randomcode", $request->code)->first();
+
+
+                if (!$qr_code) {
+                    return response()->json([
+                        'code' => Response::HTTP_NOT_FOUND, 'message' => "Wrong code"
+                    ], Response::HTTP_NOT_FOUND);
+                } else {
+                    $room = Rooms::find($qr_code->room_id);
+                    if ($qr_code == null) {
+                        return response()->json([
+                            'code' => Response::HTTP_NOT_FOUND, 'message' => "Wrong code"
+                        ], Response::HTTP_NOT_FOUND);
+                    } else {
+
+
+                        return response()->json([
+                            'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room
+                        ], Response::HTTP_OK);
+                    }
+                }
+            }
+        }
+    }
+
     public function addAdminToOldGroups(Request $request)
     {
 
@@ -306,10 +349,7 @@ class AppRoomController extends Controller
 
     public function inviteUserFromApp(Request $request)
     {
-
-
         $milliseconds = round(microtime(true) * 1000);
-
         $randomcode = Constants::generateRandomString(7);
         $qrCode = new QrCodes();
         $qrCode->qr_url = $milliseconds . 'qrcode.png';
@@ -318,20 +358,18 @@ class AppRoomController extends Controller
         $qrCode->randomcode = $randomcode;
         $qrCode->save();
 
-
+        $qrLink = 'qr/' . $milliseconds . 'qrcode.png';
         QrCode::format('png')->size(300)
             ->generate('http://yoolah.com/qr/' . $randomcode, public_path('qr/' . $milliseconds . 'qrcode.png'));
 
+        $subject = "Invited to join a group";
 
-        $msg = "Use the following code to enter the group \n\n Group code: " . $randomcode;
+        Mail::send('testmail', ['groupcode' => $randomcode, 'subject' => $subject, 'qrlink' => $qrLink], function ($message) use ($request, $subject) {
+            $message->from('noreply@yoolah.com', 'Yoolah');
+            $message->subject($subject);
+            $message->to($request->email);
+        });
 
-        $msg = $msg . "\n\n\nOr Click on the following link: http://yoolah.com/viewqr/" . $randomcode;
-
-        $mail = new MailPhp();
-        $mail->sendmail($request->email, $msg);
-        return response()->json([
-            'code' => Response::HTTP_OK, 'message' => "false"
-        ], Response::HTTP_OK);
 
     }
 

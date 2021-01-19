@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Constants;
 use App\Rooms;
+use App\RoomUsers;
 use App\User;
 use function array_push;
 use function contains;
@@ -90,17 +91,17 @@ class UserController extends Controller
             if ($user != null) {
                 $roomusers = DB::table('room_users')->where('user_id', $user->id)->get();
                 $rooms = array();
-                $names=array();
+                $names = array();
                 foreach ($roomusers as $roomuser) {
                     $room = Rooms::find($roomuser->room_id);
-                    if(!in_array($roomuser->room_id,$names)){
-                        array_push($names,$roomuser->room_id);
+                    if (!in_array($roomuser->room_id, $names)) {
+                        array_push($names, $roomuser->room_id);
                         array_push($rooms, $room);
 
                     }
                 }
                 return response()->json([
-                    'code' => 200, 'message' => 'false', 'user' => $user,'rooms'=> $rooms
+                    'code' => 200, 'message' => 'false', 'user' => $user, 'rooms' => $rooms
                 ], Response::HTTP_OK);
             } else {
                 return response()->json([
@@ -132,6 +133,29 @@ class UserController extends Controller
                     'code' => 302, 'message' => 'Wrong Id',
                 ], Response::HTTP_OK);
             }
+        }
+
+    }
+
+    public function roomList(Request $request)
+    {
+
+        if ($request->api_username != Constants::$API_USERNAME || $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+            $rooms=array();
+          $roomUser=DB::table('room_users')->where('user_id',$request->id)->get();
+          foreach ($roomUser as $roomId){
+             array_push($rooms,Rooms::find($roomId->room_id));
+          }
+
+            return response()->json([
+                'code' => 200, 'message' => 'false', 'rooms' => $rooms
+            ], Response::HTTP_OK);
+
         }
 
     }
@@ -271,7 +295,7 @@ class UserController extends Controller
 //            $message->from('chat@gmail.com', 'Chat App');
 //        });
 
-        Mail::send('testmail', [], function ($message)  {
+        Mail::send('testmail', [], function ($message) {
             $message->from('noreply@yoolah.com', 'Yoolah');
             $message->subject('New Ticket Created');
             $message->to('m.aliahmed0@gmail.com');

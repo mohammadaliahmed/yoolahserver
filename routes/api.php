@@ -25,6 +25,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('updateProfilePicture', 'UserController@updateProfilePicture');
     Route::post('updateFcmKey', 'UserController@updateFcmKey');
     Route::post('searchUsers', 'UserController@searchUsers');
+    Route::post('roomList', 'UserController@roomList');
     Route::post('loginWithId', 'UserController@loginWithId');
     Route::post('userProfile', 'UserController@userProfile');
     Route::post('updateProfile', 'UserController@updateProfile');
@@ -44,6 +45,7 @@ Route::group(['prefix' => 'room'], function () {
     Route::post('addAdminToOldGroups', 'AppRoomController@addAdminToOldGroups');
     Route::post('addUserToRoom', 'AppRoomController@addUserToRoom');
     Route::post('getRoomDetailsFromID', 'AppRoomController@getRoomDetailsFromID');
+    Route::post('getFirstTimeGroups', 'AppRoomController@getFirstTimeGroups');
     Route::post('inviteUserFromApp', 'AppRoomController@inviteUserFromApp');
     Route::get('mailTo', 'AppRoomController@mailTo');
 });
