@@ -90,7 +90,7 @@ class UserController extends Controller
 
             if ($user != null) {
                 $rooms=array();
-                $roomUser=DB::table('room_users')->where('user_id',$request->id)->get();
+                $roomUser=DB::table('room_users')->where('user_id',$user->id)->get();
                 foreach ($roomUser as $roomId){
                     array_push($rooms,Rooms::find($roomId->room_id));
                 }
