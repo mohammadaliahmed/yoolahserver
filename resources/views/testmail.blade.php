@@ -31,7 +31,7 @@
                    style="border-collapse: collapse; border: 1px solid #cccccc;">
                 <tr>
                     <td align="center" bgcolor="#2D4A84" style="padding: 40px 0 30px 0;">
-                        <img src="http://yoolah.com/public/images/logo.png" alt="Yoolah.com." width="250"
+                        <img src="http://yoolah.com/images/logo.png" alt="Yoolah.com." width="250"
                              height="250" style="display: block;"/>
                     </td>
                 </tr>
@@ -59,7 +59,7 @@
                                             <br>
 
                                             <center>
-                                                <img src="http://yoolah.com/public/{{$qrlink}}" width="300">
+                                                <img src="http://yoolah.com/{{$qrlink}}" width="300">
                                             </center>
                                         </tr>
                                     </table>
