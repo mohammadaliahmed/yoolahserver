@@ -134,11 +134,11 @@
       <file leaf-file-name="AppRoomController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="88" column="81" lean-forward="false" selection-start-line="88" selection-start-column="81" selection-end-line="88" selection-end-column="81" />
+            <state relative-caret-position="307">
+              <caret line="261" column="36" lean-forward="false" selection-start-line="261" selection-start-column="13" selection-end-line="261" selection-end-column="36" />
               <folding>
-                <marker date="1611039404890" expanded="true" signature="11806:11908" ph="select * fro... users" />
-                <marker date="1611039404890" expanded="true" signature="11838:11883" ph="select user_... room_users" />
+                <marker date="1611043237832" expanded="true" signature="12279:12381" ph="select * fro... users" />
+                <marker date="1611043237832" expanded="true" signature="12311:12356" ph="select user_... room_users" />
               </folding>
             </state>
           </provider>
@@ -147,7 +147,7 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2803">
+            <state relative-caret-position="434">
               <caret line="90" column="32" lean-forward="true" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
               <folding />
             </state>
@@ -158,11 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>yoolah.n</find>
-      <find>yoolah.ne</find>
-      <find>yoolah.net</find>
-      <find>public</find>
-      <find>public/</find>
       <find>/public/</find>
       <find>first</find>
       <find>orders</find>
@@ -188,6 +183,11 @@
       <find>loginWithId</find>
       <find>roomList</find>
       <find>inviteUserFromApp</find>
+      <find>getFirstTimeGroups</find>
+      <find>used = 1</find>
+      <find>used</find>
+      <find>code alre</find>
+      <find>addUserToRoomWithRoomId</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -594,12 +594,12 @@
       <workItem from="1610685076574" duration="1859000" />
       <workItem from="1610781021413" duration="11572000" />
       <workItem from="1610809594178" duration="3389000" />
-      <workItem from="1611031914482" duration="4660000" />
+      <workItem from="1611031914482" duration="6310000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192655000" />
+    <option name="totallyTimeSpent" value="194305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -970,14 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2803">
-          <caret line="90" column="32" lean-forward="true" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoomsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -991,13 +983,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="90" column="32" lean-forward="true" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AppRoomController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="88" column="81" lean-forward="false" selection-start-line="88" selection-start-column="81" selection-end-line="88" selection-end-column="81" />
+        <state relative-caret-position="307">
+          <caret line="261" column="36" lean-forward="false" selection-start-line="261" selection-start-column="13" selection-end-line="261" selection-end-column="36" />
           <folding>
-            <marker date="1611039404890" expanded="true" signature="11806:11908" ph="select * fro... users" />
-            <marker date="1611039404890" expanded="true" signature="11838:11883" ph="select user_... room_users" />
+            <marker date="1611043237832" expanded="true" signature="12279:12381" ph="select * fro... users" />
+            <marker date="1611043237832" expanded="true" signature="12311:12356" ph="select user_... room_users" />
           </folding>
         </state>
       </provider>

@@ -85,10 +85,10 @@ class AppRoomController extends Controller
 
             $room = DB::table('rooms')->where('roomcode', $request->code)->first();
             if ($room != null) {
-                $rooms=array();
-                $roomUser=DB::table('room_users')->where('user_id',$room->userid)->get();
-                foreach ($roomUser as $roomId){
-                    array_push($rooms,Rooms::find($roomId->room_id));
+                $rooms = array();
+                $roomUser = DB::table('room_users')->where('user_id', $room->userid)->get();
+                foreach ($roomUser as $roomId) {
+                    array_push($rooms, Rooms::find($roomId->room_id));
                 }
                 $user = User::find($room->userid);
                 return response()->json([
@@ -110,6 +110,15 @@ class AppRoomController extends Controller
                             'code' => Response::HTTP_NOT_FOUND, 'message' => "Wrong code"
                         ], Response::HTTP_NOT_FOUND);
                     } else {
+                        $qrcode=QrCodes::find($qr_code->id);
+                        if($qrcode->used==1){
+                            return response()->json([
+                                'code' => Response::HTTP_FORBIDDEN, 'message' => "Code already used"
+                            ], Response::HTTP_OK);
+                        }else{
+                            $qrcode->used = true;
+                            $qrcode->update();
+                        }
 
 
                         return response()->json([
