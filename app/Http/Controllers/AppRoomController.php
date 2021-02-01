@@ -44,9 +44,33 @@ class AppRoomController extends Controller
             $room = DB::table('rooms')->where('roomcode', $request->code)->first();
             if ($room != null) {
                 $room = Rooms::find($room->id);
-                $user = User::find($room->userid);
+                $userFromApp = User::find($request->userid);
+                $anotherUser = null;
+
+                if ($request->has("random")) {
+
+
+                    $webUser = User::find($room->userid);
+                    $anotherUser = $webUser;
+                    $webUser->delete();
+                    $userFromApp->password = $anotherUser->password;
+                    $userFromApp->email = $anotherUser->email;
+                    $userFromApp->email_verified = true;
+                    $userFromApp->name = $anotherUser->name;
+                    $userFromApp->update();
+
+                    $room->update(['userid' => $request->userid]);
+                    $roomUser = DB::table('room_users')->where('room_id', $room->id)
+                        ->where('can_message', 1)->limit(1);
+                    if ($roomUser != null) {
+                        $roomUser->update(['user_id' => $request->userid]);
+                    }
+
+                }
+
+
                 return response()->json([
-                    'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room, 'user' => $user
+                    'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room, 'user' => $userFromApp
                 ], Response::HTTP_OK);
             } else {
                 $qr_code = DB::table("qr_codes")->where("randomcode", $request->code)->first();
@@ -110,12 +134,12 @@ class AppRoomController extends Controller
                             'code' => Response::HTTP_NOT_FOUND, 'message' => "Wrong code"
                         ], Response::HTTP_NOT_FOUND);
                     } else {
-                        $qrcode=QrCodes::find($qr_code->id);
-                        if($qrcode->used==1){
+                        $qrcode = QrCodes::find($qr_code->id);
+                        if ($qrcode->used == 1) {
                             return response()->json([
                                 'code' => Response::HTTP_FORBIDDEN, 'message' => "Code already used"
                             ], Response::HTTP_OK);
-                        }else{
+                        } else {
                             $qrcode->used = true;
                             $qrcode->update();
                         }
