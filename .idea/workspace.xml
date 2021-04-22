@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="614feda6-60a6-499a-9928-af72ffd8280d" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
@@ -149,8 +148,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="368">
+              <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -725,12 +724,12 @@
       <workItem from="1611076371078" duration="1129000" />
       <workItem from="1611904900699" duration="1088000" />
       <workItem from="1612163896077" duration="3345000" />
-      <workItem from="1619008782133" duration="4941000" />
+      <workItem from="1619008782133" duration="4987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206074000" />
+    <option name="totallyTimeSpent" value="206120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1932" height="1045" extended-state="0" />
@@ -1129,8 +1128,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        <state relative-caret-position="368">
+          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="11" />
           <folding />
         </state>
       </provider>
