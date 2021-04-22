@@ -34,7 +34,7 @@ Route::get('/viewroom/roomusers/{roomId}/{userId}/{status}', 'RoomsController@ma
 Route::get('/viewqr/{id}', 'AppRoomController@viewqr')->name('viewqr');
 Route::get('/verify/{id}', 'UserController@verify')->name('verify');
 Route::post('/createroom', 'RoomsController@createroom')->name('createroom');
-Route::get('/loginadmin', 'AdminController@loginadmin')->name('loginadmin');
+Route::post('/loginadmin', 'AdminController@loginadmin')->name('loginadmin');
 Route::get('/adminhome', 'AdminController@adminhome')->name('adminhome');
 Route::post('/sendmail/{id}', 'RoomsController@sendmail')->name('sendmail');
 
