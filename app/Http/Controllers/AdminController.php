@@ -28,7 +28,7 @@ class AdminController extends Controller
     }
 
     public
-    function adminhome(Request $request)
+    function adminhome()
     {
         $rooms = DB::table('rooms')->get();
         foreach ($rooms as $room) {
