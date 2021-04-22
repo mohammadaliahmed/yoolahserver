@@ -33,7 +33,7 @@ class AdminController extends Controller
         $rooms = DB::table('rooms')->get();
         foreach ($rooms as $room) {
             $members = DB::select("Select * from users where id IN(Select user_id from room_users where room_id=" . $room->id . ")");
-            $room->memeberSize = sizeof($members);
+            $rooms->memeberSize = sizeof($members);
         }
         return view('adminhome')->with('rooms', $rooms);
 
