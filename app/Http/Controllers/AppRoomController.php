@@ -329,6 +329,32 @@ class AppRoomController extends Controller
     }
 
     public
+    function allowToMessage(Request $request)
+    {
+        if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
+            return response()->json([
+                'code' => Response::HTTP_FORBIDDEN, 'message' => "Wrong api credentials"
+            ], Response::HTTP_OK);
+        } else {
+
+
+            $val = 0;
+            if ($request->status == 'allow') {
+                $val = 1;
+            }
+
+            DB::table('room_users')
+                ->where('room_id', $request->roomId)
+                ->where('user_id', $request->userId)
+                ->update(['can_message' => $val]);
+            return response()->json([
+                'code' => Response::HTTP_OK, 'message' => "false"
+            ], Response::HTTP_OK);
+
+        }
+    }
+
+    public
     function getRoomInfo(Request $request)
     {
         if ($request->api_username != Constants::$API_USERNAME && $request->api_password != Constants::$API_PASSOWRD) {
@@ -343,6 +369,12 @@ class AppRoomController extends Controller
             $roomUser = DB::table('room_users')
                 ->where('room_id', $request->roomId)
                 ->where('user_id', $request->userId)->first();
+
+            foreach ($users as $user){
+                $user->can_message=DB::table('room_users')
+                    ->where('room_id', $request->roomId)
+                    ->where('user_id', $user->id)->first()->can_message;
+            }
 
             return response()->json([
                 'code' => Response::HTTP_OK, 'message' => "false", 'room' => $room, 'users' => $users, 'canMessage' => $roomUser->can_message

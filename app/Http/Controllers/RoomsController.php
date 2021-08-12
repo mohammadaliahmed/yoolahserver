@@ -113,6 +113,8 @@ class RoomsController extends Controller
 
     }
 
+
+
     public function removeUserFromGroup(Request $request, $roomId, $userId)
     {
         DB::table('room_users')->where('room_id', $roomId)->where('user_id', $userId)->delete();

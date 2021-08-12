@@ -47,6 +47,7 @@ Route::group(['prefix' => 'room'], function () {
     Route::post('getRoomDetailsFromID', 'AppRoomController@getRoomDetailsFromID');
     Route::post('getFirstTimeGroups', 'AppRoomController@getFirstTimeGroups');
     Route::post('inviteUserFromApp', 'AppRoomController@inviteUserFromApp');
+    Route::post('allowToMessage', 'AppRoomController@allowToMessage');
     Route::get('mailTo', 'AppRoomController@mailTo');
 });
 Route::group(['prefix' => 'message'], function () {
